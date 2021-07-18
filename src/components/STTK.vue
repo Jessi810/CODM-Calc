@@ -5,15 +5,14 @@
     <hr />
 
     <!-- Gun selections -->
-    <div class="row py-2">
-        <div class="col"></div>
-        <div class="col">
+    <div class="row my-3 justify-content-center">
+        <div class="col-6 col-sm-4">
             <select class="form-select" @change="onGunChange(0, $event.target.value)">
                 <option value="">Select Gun</option>
                 <option v-for="gun in guns" :key="gun.id" :value="gun.id">{{ gun.name }}</option>
             </select>
         </div>
-        <div class="col">
+        <div class="col-6 col-sm-4">
             <select class="form-select" @change="onGunChange(1, $event.target.value)">
                 <option value="">Select Gun</option>
                 <option v-for="gun in guns" :key="gun.id" :value="gun.id">{{ gun.name }}</option>
@@ -21,108 +20,105 @@
         </div>
     </div>
 
-    <!-- STK values -->
-    <div class="row py-2">
-        <div class="col-4">STK (Shots to kill)</div>
-        <div class="col-4">
-            {{ stk[0] != null || stk[0] != NaN ? stk[0] : '0' }} shots
-        </div>
-        <div class="col-4">
-            {{ stk[1] != null || stk[0] != NaN ? stk[1] : '0' }} shots
-        </div>
-    </div>
-
-    <!-- TTK values -->
-    <div class="row py-2">
-        <div class="col-4">TTK (Time to kill in milliseconds)</div>
-        <div class="col-4">
-            {{ ttk[0] != null || ttk[0] != NaN ? ttk[0] : '0' }} ms
-        </div>
-        <div class="col-4">
-            {{ ttk[1] != null || ttk[0] != NaN ? ttk[1] : '0' }} ms
-        </div>
-    </div>
-
-    <!-- HP and Vest selections -->
-    <div class="accordion" id="accordion-one">
-        <!-- Accordion 1 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    HP and Vest
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion-one">
-                <div class="accordion-body">
-                    <div class="row py-3">
-                        <div class="col-4">
-                            MP: select 100 HP & No vest, select 250 HP for dynamic armor operator skill
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="hp-100" v-model="hp_selected" @change="onHpChange" value="100">
-                                <label for="100" class="form-label">100 HP</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="hp-150" v-model="hp_selected" @change="onHpChange" value="150">
-                                <label for="150" class="form-label">150 HP</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="hp-250" v-model="hp_selected" @change="onHpChange" value="250">
-                                <label for="250" class="form-label">250 HP</label>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="0">
-                                <label for="vest-0" class="form-label">No Vest</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="25">
-                                <label for="vest-1" class="form-label">Level 1</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="35">
-                                <label for="vest-2" class="form-label">Level 2</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="45">
-                                <label for="vest-3" class="form-label">Level 3</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- STK and TTK values -->
+    <div class="row my-3">
+        <div class="row justify-content-center">
+            <div class="col-6 col-sm-4 text-center">
+                {{ stk[0] != null || stk[0] != NaN || stk[0] != undefined ? stk[0] : '0' }} shots
+            </div>
+            <div class="col-6 col-sm-4 text-center">
+                {{ stk[1] != null || stk[0] != NaN || stk[1] != undefined ? stk[1] : '0' }} shots
             </div>
         </div>
-        <!-- Accordion 2 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Attachments
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-one">
-                <div class="accordion-body">
-                    Upcoming feature
-                </div>
+
+        <div class="row justify-content-center text-center">
+            <div class="col-6 col-sm-4">
+                {{ ttk[0] != null || ttk[0] != NaN || ttk[0] != undefined ? ttk[0] : '0' }} ms
+            </div>
+            <div class="col-6 col-sm-4">
+                {{ ttk[1] != null || ttk[0] != NaN || ttk[1] != undefined ? ttk[1] : '0' }} ms
             </div>
         </div>
     </div>
 
     <!-- Range selection -->
-    <div class="row py-2">
-        <div class="col-4">Range to target</div>
-        <div class="col-8">
-            <div class="input-group">
+    <div class="row my-3 justify-content-center">
+        <div class="col-12 col-sm-8">
+            <label for="input-group-range">Range to target</label>
+            <div class="input-group" id="input-group-range">
                 <input type="range" class="form-control w-50" v-model="range_selected" @input="onRangeChange" min="0" :max="max_range" step="1">
-                <input type="number" class="form-control w-10" v-model="range_selected" @input="onRangeChange" min="0" :max="max_range" step="1">
+                <input type="number" class="form-control w-25" v-model="range_selected" @input="onRangeChange" min="0" :max="max_range" step="1">
+                <span class="input-group-text" id="basic-addon2">meters</span>
             </div>
         </div>
     </div>
 
-    <br />
-
+    <!-- HP and Vest selections -->
+    <div class="row mt-5 justify-content-center">
+        <div class="col-12 col-sm-8">
+            <div class="accordion" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            HP and Vest
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center">
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="hp-100" v-model="hp_selected" @change="onHpChange" value="100">
+                                        <label for="100" class="form-label">100 HP</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="hp-150" v-model="hp_selected" @change="onHpChange" value="150">
+                                        <label for="150" class="form-label">150 HP</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="hp-250" v-model="hp_selected" @change="onHpChange" value="250">
+                                        <label for="250" class="form-label">250 HP</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="0">
+                                        <label for="vest-0" class="form-label">No Vest</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="25">
+                                        <label for="vest-1" class="form-label">Level 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="35">
+                                        <label for="vest-2" class="form-label">Level 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="45">
+                                        <label for="vest-3" class="form-label">Level 3</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Upcoming features
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            Attachments / Hitbox multipliers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 </template>
 
 <script>
