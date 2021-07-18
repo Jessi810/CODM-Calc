@@ -110,7 +110,18 @@
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                            Attachments / Hitbox multipliers
+                            <ul class="list-group">
+                                <li class="list-group-item">Attachments with range/damage modifiers</li>
+                                <li class="list-group-item">Hitbox multipliers</li>
+                                <!-- <li class="list-group-item"></li> -->
+                            </ul>
+                            <br />
+                            <p>
+                                If you have or knows someone who can provide stats of guns, I'd be grateful if you can share it to me. Send a message to me on <a href="https://www.reddit.com/user/CrazyAmount5">reddit</a>
+                            </p>
+                            <p>
+                                Note: This app is still on early stage of development. Stats are still highly inaccurate.
+                            </p>
                         </div>
                     </div>
                 </div>
