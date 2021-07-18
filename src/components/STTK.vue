@@ -231,6 +231,12 @@ export default {
             calculate()
         }
         const onRangeChange = () => {
+            if (range_selected.value > max_range.value) {
+                range_selected.value = 50
+            }
+            if (range_selected.value < 0) {
+                range_selected.value = 0
+            }
             calculate()
         }
         const setDamageRange = (gun_index, gun_id) => {
