@@ -140,47 +140,11 @@ export default {
         // PROPERTIES
         const guns = ref([
             {
-                id: 0,
-                name: 'AK-47',
-                type: 'AR',
-                damage: [33, 26, 19],
-                range: [29, 36],
-                firerate: 548
+                id: 1010,
+                name: 'Type 25'
             },
             {
-                id: 1,
-                name: 'BK57',
-                type: 'AR', 
-                damage: [27, 22, 19],
-                range: [19, 31],
-                firerate: 659
-            },
-            {
-                id: 2,
-                name: 'HBRa3',
-                type: 'AR', 
-                damage: [26, 22, 17],
-                range: [14, 36],
-                firerate: 697
-            },
-            {
-                id: 3,
-                name: 'HVK-30',
-                type: 'AR', 
-                damage: [23, 18, 16],
-                range: [21, 34],
-                firerate: 711
-            },
-            {
-                id: 4,
-                name: 'HVK-30 (LC)',
-                type: 'AR', 
-                damage: [34, 24, 19],
-                range: [7, 46],
-                firerate: 711
-            },
-            {
-                id: 5,
+                id: 1020,
                 name: 'M16',
                 type: 'AR', 
                 damage: [30, 23, 21, 19],
@@ -188,6 +152,295 @@ export default {
                 firerate: 788,
                 burst_round: 3,
                 burst_delay: 266
+            },
+            {
+                id: 1030,
+                name: 'AK117'
+            },
+            {
+                id: 1040,
+                name: 'AK-47',
+                type: 'AR',
+                damage: [33, 26, 19],
+                range: [29, 36],
+                firerate: 548
+            },
+            {
+                id: 1050,
+                name: 'ASM10'
+            },
+            {
+                id: 1060,
+                name: 'M4'
+            },
+            {
+                id: 1070,
+                name: 'BK57',
+                type: 'AR', 
+                damage: [27, 22, 19],
+                range: [19, 30],
+                firerate: 665,
+                hitbox: {
+                    head: 1.2
+                }
+            },
+            {
+                id: 1080,
+                name: 'LK24'
+            },
+            {
+                id: 1090,
+                name: 'ICR-1'
+            },
+            {
+                id: 1100,
+                name: 'Man-O-War'
+            },
+            {
+                id: 1110,
+                name: 'KN-44'
+            },
+            {
+                id: 1120,
+                name: 'HBRa3',
+                type: 'AR', 
+                damage: [26, 22, 17],
+                range: [14, 36],
+                firerate: 697
+            },
+            {
+                id: 1130,
+                name: 'HVK-30',
+                type: 'AR', 
+                damage: [23, 18, 16],
+                range: [21, 34],
+                firerate: 711
+            },
+            {
+                id: 1131,
+                name: 'HVK-30 (LC)',
+                type: 'AR', 
+                damage: [34, 24, 19],
+                range: [7, 46],
+                firerate: 711
+            },
+            {
+                id: 1140,
+                name: 'DR-H'
+            },
+            {
+                id: 1150,
+                name: 'Peacekeeper MK2'
+            },
+            {
+                id: 1160,
+                name: 'FR .556'
+            },
+            {
+                id: 1170,
+                name: 'AS VAL',
+                type: 'AR', 
+                damage: [28, 25, 22, 19],
+                range: [7, 20, 30],
+                firerate: 800,
+                hitbox: {
+                    head: 1.5, upper_torso: 1.1, lower_torso: 1,
+                    groin: 1, arms: 1, legs: 1
+                },
+                credits: {
+                    name: 'Mrroey', link: 'https://discordapp.com/users/265688979880280064'
+                }
+            },
+            {
+                id: 1180,
+                name: 'CR-56 AMAX',
+                type: 'AR', 
+                damage: [25, 24, 20, 16],
+                range: [13, 18, 26],
+                firerate: 710,
+                hitbox: {
+                    head: 1.5, upper_torso: 1.3, lower_torso: 1.1,
+                    groin: 1, arms: { upper: 1.1, lower: 1 }, legs: 1
+                }
+            },
+            {
+                id: 3010,
+                name: 'S36'
+            },
+            {
+                id: 3020,
+                name: 'UL736'
+            },
+            {
+                id: 3030,
+                name: 'RPD'
+            },
+            {
+                id: 3040,
+                name: 'M4 LMG'
+            },
+            {
+                id: 3050,
+                name: 'Chopper'
+            },
+            {
+                id: 3060,
+                name: 'Holger 26',
+                type: 'LMG',
+                damage: [31, 25, 21, 19],
+                range: [17, 25, 51],
+                firerate: 706,
+                hitbox: {
+                    head: 1.2, upper_torso: 1, lower_torso: 1,
+                    groin: 1, arms: 1, legs: 1
+                },
+                credits: {
+                    name: 'Mrroey', link: 'https://discordapp.com/users/265688979880280064'
+                }
+            },
+            {
+                id: 4010,
+                name: 'RUS-79U'
+            },
+            {
+                id: 4020,
+                name: 'Chicom'
+            },
+            {
+                id: 4030,
+                name: 'PDW-57'
+            },
+            {
+                id: 4040,
+                name: 'Razorback'
+            },
+            {
+                id: 4050,
+                name: 'MSMC',
+                type: 'SMG',
+                damage: [27, 25, 23],
+                range: [9, 15, 19],
+                firerate: 878,
+                hitbox: {
+                    head: 1.1, upper_torso: 1, lower_torso: 1,
+                    groin: 1, arms: 1, legs: 0.9
+                },
+                credits: {
+                    name: 'READ ABOUT ME AND RETWEET#2590', link: 'https://discordapp.com/users/302829483075829761'
+                }
+            },
+            {
+                id: 4060,
+                name: 'HG 40'
+            },
+            {
+                id: 4070,
+                name: 'Pharo'
+            },
+            {
+                id: 4080,
+                name: 'GKS'
+            },
+            {
+                id: 4090,
+                name: 'Cordite'
+            },
+            {
+                id: 4100,
+                name: 'QQ9'
+            },
+            {
+                id: 4110,
+                name: 'Fennec',
+                type: 'SMG',
+                damage: [23, 18, 13, 12],
+                range: [16, 21, 29],
+                firerate: 1110,
+                hitbox: {
+                    head: 1.1, upper_torso: 1.1, lower_torso: 1,
+                    groin: 0.9, arms: 0.9, legs: 0.9
+                }
+            },
+            {
+                id: 4120,
+                name: 'AGR 556'
+            },
+            {
+                id: 4130,
+                name: 'QXR',
+                type: 'SMG',
+                damage: [22, 19, 16, 12],
+                range: [9, 16, 26],
+                firerate: 860,
+                hitbox: {
+                    head: 1.3, upper_torso: 1.3, lower_torso: 0.9,
+                    groin: 0.9, arms: 0.9, legs: 0.9
+                }
+            },
+            {
+                id: 4131,
+                name: 'QXR (EB)',
+                type: 'SMG',
+                damage: [22, 19, 16, 12],
+                range: [9, 16, 26],
+                firerate: 1000,
+                hitbox: {
+                    head: 1.3, upper_torso: 1.1, lower_torso: 0.9,
+                    groin: 0.9, arms: 0.9, legs: 0.9
+                }
+            },
+            {
+                id: 4140,
+                name: 'PP19 Bizon',
+                type: 'SMG',
+                damage: [26, 24, 22, 16],
+                range: [15, 21, 31],
+                firerate: 650,
+                hitbox: {
+                    head: 1.2, upper_torso: 1, lower_torso: 1,
+                    groin: 0.8, arms: 1, legs: 0.8
+                }
+            },
+            {
+                id: 4141,
+                name: 'PP19 Bizon (LC)',
+                type: 'SMG',
+                damage: [26, 24, 22, 16],
+                range: [12, 17, 25],
+                firerate: 650,
+                hitbox: {
+                    head: 1.2, upper_torso: 1, lower_torso: 1,
+                    groin: 1, arms: 1, legs: 1
+                }
+            },
+            {
+                id: 7010,
+                name: 'J358'
+            },
+            {
+                id: 7020,
+                name: 'MW11'
+            },
+            {
+                id: 7030,
+                name: '.50 GS'
+            },
+            {
+                id: 7040,
+                name: 'Renetti',
+                type: 'HG',
+                damage: [30, 23, 21, 19],
+                range: [25, 36, 45],
+                firerate: 720,
+                burst_round: 3,
+                burst_delay: 333,
+                hitbox: {
+                    head: 2, upper_torso: 1.6, lower_torso: 1,
+                    groin: 1, arms: 1.6, legs: 1
+                },
+                credits: {
+                    name: 'Mrroey', link: 'https://discordapp.com/users/265688979880280064'
+                }
             }
         ])
         const gunsSelected = ref([{}, {}])
@@ -242,7 +495,7 @@ export default {
             tempRangeDamage.profile.push(tempGun.damage[ctx])
             rangeDamage.value[index] = tempRangeDamage
         }
-        const calculate = () => { // todo fix calculation for burst type guns
+        const calculate = () => {
             let rd = rangeDamage.value
             let gs = gunsSelected.value
             let totalHp = hpSelected.value / ((100 - vestSelected.value) / 100)
