@@ -24,7 +24,7 @@
     <div class="row my-3">
         <div class="row justify-content-center">
             <div class="col-6 col-sm-4 text-center">
-                <i :class="caretStyle1"></i> {{ format(sttk[0].stk) }}
+                {{ format(sttk[0].stk) }} <i :class="caretStyle1"></i>
             </div>
             <div class="col-6 col-sm-4 text-center">
                 <i :class="caretStyle2"></i> {{ format(sttk[1].stk) }}
@@ -33,7 +33,7 @@
 
         <div class="row justify-content-center text-center">
             <div class="col-6 col-sm-4">
-                <i :class="caretStyle3"></i> {{ format(sttk[0].ttk) }}
+                {{ format(sttk[0].ttk) }} <i :class="caretStyle3"></i>
             </div>
             <div class="col-6 col-sm-4">
                 <i :class="caretStyle4"></i> {{ format(sttk[1].ttk) }}
@@ -66,7 +66,7 @@
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <div class="row justify-content-center">
-                                <div class="col-6 col-sm-4">
+                                <div class="col-6 col-sm-6">
                                     <div class="form-check">
                                         <input type="radio" class="form-check-input" id="hp-30" v-model="hpSelected" @change="onHpChange" value="30">
                                         <label for="hp-30" class="form-label">30 HP (Hardcore)</label>
@@ -84,7 +84,7 @@
                                         <label for="hp-250" class="form-label">250 HP</label>
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-4">
+                                <div class="col-6 col-sm-6">
                                     <div class="form-check">
                                         <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="0">
                                         <label for="vest-0" class="form-label">No Vest</label>
@@ -120,11 +120,13 @@
                                 <!-- <li class="list-group-item"></li> -->
                             </ul>
                             <br />
-                            <p>
-                                If you have or knows someone who can provide stats of guns, I'd be grateful if you can share it to me. Send a message to me on <a href="https://www.reddit.com/user/CrazyAmount5">reddit</a>
+                            <p class="o">
+                                <i class="bi bi-info-square-fill text-info"></i>
+                                &nbsp;If you have or knows someone who can provide stats of guns, I'd be grateful if you can share it to me. Send me a message on <a href="https://www.reddit.com/user/CrazyAmount5">reddit</a>
                             </p>
-                            <p>
-                                Note: This app is still on early stage of development. Stats are still highly inaccurate.
+                            <p class="">
+                                <i class="bi bi-exclamation-square-fill text-warning"></i>
+                                &nbsp;Note: This app is still on early stage of development. Stats are still highly inaccurate.
                             </p>
                         </div>
                     </div>
