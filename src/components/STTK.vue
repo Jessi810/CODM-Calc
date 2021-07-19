@@ -205,6 +205,10 @@ export default {
                 gunsSelected.value[index] = {}
                 rangeDamage.value[index] = {}
                 sttk.value[index] = {}
+                caretStyle1.value = ''
+                caretStyle2.value = ''
+                caretStyle3.value = ''
+                caretStyle4.value = ''
             }
             else {
                 gunsSelected.value[index] = guns.value.find(g => g.id == id)
@@ -327,7 +331,6 @@ export default {
                     caretStyle4.value = 'bi bi-caret-down-fill text-danger'
                 }
             }
-            
         }
 
         return {
