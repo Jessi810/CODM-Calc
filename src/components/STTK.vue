@@ -68,16 +68,20 @@
                             <div class="row justify-content-center">
                                 <div class="col-6 col-sm-4">
                                     <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="hp-30" v-model="hpSelected" @change="onHpChange" value="30">
+                                        <label for="hp-30" class="form-label">30 HP (Hardcore)</label>
+                                    </div>
+                                    <div class="form-check">
                                         <input type="radio" class="form-check-input" id="hp-100" v-model="hpSelected" @change="onHpChange" value="100">
-                                        <label for="100" class="form-label">100 HP</label>
+                                        <label for="hp-100" class="form-label">100 HP</label>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" class="form-check-input" id="hp-150" v-model="hpSelected" @change="onHpChange" value="150">
-                                        <label for="150" class="form-label">150 HP</label>
+                                        <label for="hp-150" class="form-label">150 HP</label>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" class="form-check-input" id="hp-250" v-model="hpSelected" @change="onHpChange" value="250">
-                                        <label for="250" class="form-label">250 HP</label>
+                                        <label for="hp-250" class="form-label">250 HP</label>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-4">
@@ -300,9 +304,12 @@ export default {
         const format = (value) => {
             // This need some fix later on. The returned value just depends on value of passed parameters
             if (value != null && value !== 'undefined')
-                if (value < 50)
+                if (value == 0)
+                    return value + ' ms'
+                else if (value < 50)
                     return value + ' shots'
-                else return value + ' ms'
+                else
+                    return value + ' ms'
         }
         const setCaretStyle = () => {
             if (isValid(sttk.value[0]) && isValid(sttk.value[1]))
