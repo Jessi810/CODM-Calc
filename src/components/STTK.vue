@@ -1,7 +1,7 @@
 <template>
 
 <div class="container-main container-sm p-3 mt-3" style="min-width: 360px; max-width: 720px;">
-    <h1 class="h1">STK & TTK</h1>
+    <h1>STK & TTK</h1>
     <hr />
 
     <!-- Gun selections -->
@@ -24,19 +24,19 @@
     <div class="row my-3">
         <div class="row justify-content-center">
             <div class="col-6 col-sm-4 text-center">
-                {{ sttk[0].stk != null || sttk[0].stk != NaN || sttk[0].stk != undefined ? sttk[0].stk : '' }} shots
+                <i :class="caretStyle1"></i> {{ format(sttk[0].stk) }}
             </div>
             <div class="col-6 col-sm-4 text-center">
-                {{ sttk[1].stk != null || sttk[1].stk != NaN || sttk[1].stk != undefined ? sttk[1].stk : '' }} shots
+                <i :class="caretStyle2"></i> {{ format(sttk[1].stk) }}
             </div>
         </div>
 
         <div class="row justify-content-center text-center">
             <div class="col-6 col-sm-4">
-                {{ sttk[0].ttk != null || sttk[0].ttk != NaN || sttk[0].ttk != undefined ? sttk[0].ttk : '' }} ms
+                <i :class="caretStyle3"></i> {{ format(sttk[0].ttk) }}
             </div>
             <div class="col-6 col-sm-4">
-                {{ sttk[1].ttk != null || sttk[1].ttk != NaN || sttk[1].ttk != undefined ? sttk[1].ttk : '' }} ms
+                <i :class="caretStyle4"></i> {{ format(sttk[1].ttk) }}
             </div>
         </div>
     </div>
@@ -197,6 +197,7 @@ export default {
         const rangeDamage = ref([{}, {}])
         const maxRange = ref(50)
         const sttk = ref([{}, {}])
+        const caretStyle1 = ref(), caretStyle2 = ref(), caretStyle3 = ref(), caretStyle4 = ref()
 
         // COMPUTED PROPERTIES
         const onGunChange = (index, id) => {
@@ -268,6 +269,8 @@ export default {
                         sttk.value[x].ttk = Math.trunc(60000 / gs[x].firerate * (sttk.value[x].stk - 1))
                 }
             }
+
+            setCaretStyle()
         }
         const onHpChange = () => {
             calculate()
@@ -290,10 +293,46 @@ export default {
 
             return Object.keys(value).length > 0 && value.constructor === Object
         }
+        const format = (value) => {
+            // This need some fix later on. The returned value just depends on value of passed parameters
+            if (value != null && value !== 'undefined')
+                if (value < 50)
+                    return value + ' shots'
+                else return value + ' ms'
+        }
+        const setCaretStyle = () => {
+            if (isValid(sttk.value[0]) && isValid(sttk.value[1]))
+            {
+                if (sttk.value[0].stk == sttk.value[1].stk) {
+                    caretStyle1.value = 'bi bi-dash'
+                    caretStyle2.value = 'bi bi-dash'
+                }
+                else if (sttk.value[0].stk > sttk.value[1].stk) {
+                    caretStyle1.value = 'bi bi-caret-down-fill text-danger'
+                    caretStyle2.value = 'bi bi-caret-up-fill text-success'
+                } else {
+                    caretStyle1.value = 'bi bi-caret-up-fill text-success'
+                    caretStyle2.value = 'bi bi-caret-down-fill text-danger'
+                }
+
+                if (sttk.value[0].ttk == sttk.value[1].ttk) {
+                    caretStyle3.value = 'bi bi-dash'
+                    caretStyle4.value = 'bi bi-dash'
+                }
+                else if (sttk.value[0].ttk > sttk.value[1].ttk) {
+                    caretStyle3.value = 'bi bi-caret-down-fill text-danger'
+                    caretStyle4.value = 'bi bi-caret-up-fill text-success'
+                } else {
+                    caretStyle3.value = 'bi bi-caret-up-fill text-success'
+                    caretStyle4.value = 'bi bi-caret-down-fill text-danger'
+                }
+            }
+            
+        }
 
         return {
-            guns, gunsSelected, hpSelected, vestSelected, rangeSelected, rangeDamage, maxRange, sttk,
-            onGunChange, onHpChange, onVestChange, onRangeChange, calculate, setRangeDamage
+            guns, gunsSelected, hpSelected, vestSelected, rangeSelected, rangeDamage, maxRange, sttk, caretStyle1, caretStyle2, caretStyle3, caretStyle4,
+            onGunChange, onHpChange, onVestChange, onRangeChange, calculate, setRangeDamage, format, setCaretStyle
         }
     }
 }
