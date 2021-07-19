@@ -9,13 +9,13 @@
         <div class="col-6 col-sm-4">
             <select class="form-select" @change="onGunChange(0, $event.target.value)">
                 <option value="">Select Gun</option>
-                <option v-for="gun in guns" :key="gun.id" :value="gun.id">{{ gun.name }}</option>
+                <option v-for="gun in guns" :key="gun.id" :value="gun.id" :hidden="!(gun.firerate > 0)">{{ gun.type }} | {{ gun.name }}</option>
             </select>
         </div>
         <div class="col-6 col-sm-4">
             <select class="form-select" @change="onGunChange(1, $event.target.value)">
                 <option value="">Select Gun</option>
-                <option v-for="gun in guns" :key="gun.id" :value="gun.id">{{ gun.name }}</option>
+                <option v-for="gun in guns" :key="gun.id" :value="gun.id" :hidden="!(gun.firerate > 0)">{{ gun.type }} | {{ gun.name }}</option>
             </select>
         </div>
     </div>
@@ -141,7 +141,8 @@ export default {
         const guns = ref([
             {
                 id: 1010,
-                name: 'Type 25'
+                name: 'Type 25',
+                type: 'AR'
             },
             {
                 id: 1020,
@@ -155,7 +156,8 @@ export default {
             },
             {
                 id: 1030,
-                name: 'AK117'
+                name: 'AK117',
+                type: 'AR'
             },
             {
                 id: 1040,
@@ -167,11 +169,13 @@ export default {
             },
             {
                 id: 1050,
-                name: 'ASM10'
+                name: 'ASM10',
+                type: 'AR'
             },
             {
                 id: 1060,
-                name: 'M4'
+                name: 'M4',
+                type: 'AR'
             },
             {
                 id: 1070,
@@ -186,19 +190,23 @@ export default {
             },
             {
                 id: 1080,
-                name: 'LK24'
+                name: 'LK24',
+                type: 'AR'
             },
             {
                 id: 1090,
-                name: 'ICR-1'
+                name: 'ICR-1',
+                type: 'AR'
             },
             {
                 id: 1100,
-                name: 'Man-O-War'
+                name: 'Man-O-War',
+                type: 'AR'
             },
             {
                 id: 1110,
-                name: 'KN-44'
+                name: 'KN-44',
+                type: 'AR'
             },
             {
                 id: 1120,
@@ -226,15 +234,18 @@ export default {
             },
             {
                 id: 1140,
-                name: 'DR-H'
+                name: 'DR-H',
+                type: 'AR'
             },
             {
                 id: 1150,
-                name: 'Peacekeeper MK2'
+                name: 'Peacekeeper MK2',
+                type: 'AR'
             },
             {
                 id: 1160,
-                name: 'FR .556'
+                name: 'FR .556',
+                type: 'AR'
             },
             {
                 id: 1170,
@@ -265,23 +276,28 @@ export default {
             },
             {
                 id: 3010,
-                name: 'S36'
+                name: 'S36',
+                type: 'LMG'
             },
             {
                 id: 3020,
-                name: 'UL736'
+                name: 'UL736',
+                type: 'LMG'
             },
             {
                 id: 3030,
-                name: 'RPD'
+                name: 'RPD',
+                type: 'LMG'
             },
             {
                 id: 3040,
-                name: 'M4 LMG'
+                name: 'M4 LMG',
+                type: 'LMG'
             },
             {
                 id: 3050,
-                name: 'Chopper'
+                name: 'Chopper',
+                type: 'LMG'
             },
             {
                 id: 3060,
@@ -300,19 +316,23 @@ export default {
             },
             {
                 id: 4010,
-                name: 'RUS-79U'
+                name: 'RUS-79U',
+                type: 'SMG'
             },
             {
                 id: 4020,
-                name: 'Chicom'
+                name: 'Chicom',
+                type: 'SMG'
             },
             {
                 id: 4030,
-                name: 'PDW-57'
+                name: 'PDW-57',
+                type: 'SMG'
             },
             {
                 id: 4040,
-                name: 'Razorback'
+                name: 'Razorback',
+                type: 'SMG'
             },
             {
                 id: 4050,
@@ -331,23 +351,28 @@ export default {
             },
             {
                 id: 4060,
-                name: 'HG 40'
+                name: 'HG 40',
+                type: 'SMG'
             },
             {
                 id: 4070,
-                name: 'Pharo'
+                name: 'Pharo',
+                type: 'SMG'
             },
             {
                 id: 4080,
-                name: 'GKS'
+                name: 'GKS',
+                type: 'SMG'
             },
             {
                 id: 4090,
-                name: 'Cordite'
+                name: 'Cordite',
+                type: 'SMG'
             },
             {
                 id: 4100,
-                name: 'QQ9'
+                name: 'QQ9',
+                type: 'SMG'
             },
             {
                 id: 4110,
@@ -363,7 +388,8 @@ export default {
             },
             {
                 id: 4120,
-                name: 'AGR 556'
+                name: 'AGR 556',
+                type: 'SMG'
             },
             {
                 id: 4130,
@@ -415,15 +441,18 @@ export default {
             },
             {
                 id: 7010,
-                name: 'J358'
+                name: 'J358',
+                type: 'HG'
             },
             {
                 id: 7020,
-                name: 'MW11'
+                name: 'MW11',
+                type: 'HG'
             },
             {
                 id: 7030,
-                name: '.50 GS'
+                name: '.50 GS',
+                type: 'HG'
             },
             {
                 id: 7040,
