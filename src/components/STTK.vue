@@ -344,7 +344,7 @@ export default {
                 id: 4050,
                 name: 'MSMC',
                 type: 'SMG',
-                damage: [27, 25, 23],
+                damage: [25, 21, 18, 17],
                 range: [9, 15, 19],
                 firerate: 878,
                 hitbox: {
