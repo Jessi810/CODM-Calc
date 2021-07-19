@@ -195,6 +195,7 @@ export default {
         const vestSelected = ref(0)
         const rangeSelected = ref(25)
         const rangeDamage = ref([{}, {}])
+        const maxRange = ref(50)
         const sttk = ref([{}, {}])
 
         // COMPUTED PROPERTIES
@@ -235,9 +236,6 @@ export default {
 
             tempRangeDamage.profile.push(tempGun.damage[ctx])
             rangeDamage.value[index] = tempRangeDamage
-
-            console.log('rangeDamage has been set')
-            console.table(rangeDamage.value)
         }
         const calculate = () => { // todo fix calculation for burst type guns
             let rd = rangeDamage.value
@@ -256,7 +254,18 @@ export default {
                         tempDamage = rd[x].profile.slice(-1)[0]
 
                     sttk.value[x].stk = Math.ceil(totalHp / tempDamage)
-                    sttk.value[x].ttk = Math.trunc(1000 / gs[x].firerate * 60 * (sttk.value[x].stk - 1))
+
+                    if ('burst_delay' in gs[x])
+                    {
+                        let burstCount = Math.ceil( sttk.value[x].stk / gs[x].burst_round ) // stk: 5, bc: 2
+                        let burstDelayTotal = gs[x].burst_delay * (burstCount - 1) // 266ms, 76ms/shot, 152+266=418+76=496
+
+                        sttk.value[x].ttk = Math.trunc(
+                            ( 60000 / gs[x].firerate * (sttk.value[x].stk - burstCount) ) + burstDelayTotal
+                        )
+                    }
+                    else
+                        sttk.value[x].ttk = Math.trunc(60000 / gs[x].firerate * (sttk.value[x].stk - 1))
                 }
             }
         }
