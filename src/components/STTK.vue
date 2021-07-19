@@ -24,19 +24,19 @@
     <div class="row my-3">
         <div class="row justify-content-center">
             <div class="col-6 col-sm-4 text-center">
-                {{ stk[0] != null || stk[0] != NaN || stk[0] != undefined ? stk[0] : '0' }} shots
+                {{ sttk[0].stk != null || sttk[0].stk != NaN || sttk[0].stk != undefined ? sttk[0].stk : '' }} shots
             </div>
             <div class="col-6 col-sm-4 text-center">
-                {{ stk[1] != null || stk[0] != NaN || stk[1] != undefined ? stk[1] : '0' }} shots
+                {{ sttk[1].stk != null || sttk[1].stk != NaN || sttk[1].stk != undefined ? sttk[1].stk : '' }} shots
             </div>
         </div>
 
         <div class="row justify-content-center text-center">
             <div class="col-6 col-sm-4">
-                {{ ttk[0] != null || ttk[0] != NaN || ttk[0] != undefined ? ttk[0] : '0' }} ms
+                {{ sttk[0].ttk != null || sttk[0].ttk != NaN || sttk[0].ttk != undefined ? sttk[0].ttk : '' }} ms
             </div>
             <div class="col-6 col-sm-4">
-                {{ ttk[1] != null || ttk[0] != NaN || ttk[1] != undefined ? ttk[1] : '0' }} ms
+                {{ sttk[1].ttk != null || sttk[1].ttk != NaN || sttk[1].ttk != undefined ? sttk[1].ttk : '' }} ms
             </div>
         </div>
     </div>
@@ -183,30 +183,26 @@ export default {
                 id: 5,
                 name: 'M16',
                 type: 'AR', 
-                damage: [45, 31, 25],
-                range: [16, 30],
-                firerate: 800,
+                damage: [30, 23, 21, 19],
+                range: [25, 36, 45],
+                firerate: 788,
                 burst_round: 3,
-                burst_delay: 200
+                burst_delay: 266
             }
         ])
-        const gunsSelected = ref([{}])
+        const gunsSelected = ref([{}, {}])
         const hpSelected = ref(100)
         const vestSelected = ref(0)
         const rangeSelected = ref(25)
-        const rangeDamage = ref([{}])
-        const maxRange = ref(50)
-        const stk = ref([])
-        const ttk = ref([])
-        const sttk = ref([{}])
+        const rangeDamage = ref([{}, {}])
+        const sttk = ref([{}, {}])
 
         // COMPUTED PROPERTIES
         const onGunChange = (index, id) => {
             if (id == '') {
-                gunsSelected.value[index] = null
-                stk.value[index] = null
-                ttk.value[index] = null
-                rangeDamage.value[index] = null
+                gunsSelected.value[index] = {}
+                rangeDamage.value[index] = {}
+                sttk.value[index] = {}
             }
             else {
                 gunsSelected.value[index] = guns.value.find(g => g.id == id)
@@ -214,42 +210,6 @@ export default {
                 setRangeDamage(index, id)
                 calculate()
             }
-        }
-        const calculate = () => {
-            let temp_hp = hpSelected.value
-            let temp_vest = vestSelected.value
-            let temp_range = rangeSelected.value
-            let temp_rangeDamage = rangeDamage.value
-
-            let total_hp = temp_hp / ((100 - temp_vest) / 100)
-
-
-            for (let x = 0; x < 2; x++) // todo: change # of loop depending on # of gunsSelected
-            {
-                if (temp_rangeDamage[x] != null) {
-                    stk.value[x] = Math.ceil(total_hp / temp_rangeDamage[x].rng_dmg[temp_range])
-
-                    if (gunsSelected.value[x].firerate != undefined) {
-                        let temp_firerate = gunsSelected.value[x].firerate
-                        ttk.value[x] = Math.trunc(1000 / temp_firerate * 60 * (stk.value[x] - 1))
-                    }
-                }
-            }
-        }
-        const onHpChange = () => {
-            calculate()
-        }
-        const onVestChange = () => {
-            calculate()
-        }
-        const onRangeChange = () => {
-            if (rangeSelected.value > maxRange.value) {
-                rangeSelected.value = 50
-            }
-            if (rangeSelected.value < 0) {
-                rangeSelected.value = 0
-            }
-            calculate()
         }
         const setRangeDamage = (index, id) => {
             let tempGun = gunsSelected.value[index]
@@ -275,10 +235,55 @@ export default {
 
             tempRangeDamage.profile.push(tempGun.damage[ctx])
             rangeDamage.value[index] = tempRangeDamage
+
+            console.log('rangeDamage has been set')
+            console.table(rangeDamage.value)
+        }
+        const calculate = () => { // todo fix calculation for burst type guns
+            let rd = rangeDamage.value
+            let gs = gunsSelected.value
+            let totalHp = hpSelected.value / ((100 - vestSelected.value) / 100)
+
+            for (let x = 0; x < gs.length; x++)
+            {
+                if (isValid(gs[x])) // Check if gun is selected
+                {
+                    let tempDamage
+
+                    if (rangeSelected.value < rd[x].profile.length - 1)
+                        tempDamage = rd[x].profile[rangeSelected.value]
+                    else
+                        tempDamage = rd[x].profile.slice(-1)[0]
+
+                    sttk.value[x].stk = Math.ceil(totalHp / tempDamage)
+                    sttk.value[x].ttk = Math.trunc(1000 / gs[x].firerate * 60 * (sttk.value[x].stk - 1))
+                }
+            }
+        }
+        const onHpChange = () => {
+            calculate()
+        }
+        const onVestChange = () => {
+            calculate()
+        }
+        const onRangeChange = () => {
+            if (rangeSelected.value > maxRange.value) {
+                rangeSelected.value = 50
+            }
+            if (rangeSelected.value < 0) {
+                rangeSelected.value = 0
+            }
+            calculate()
+        }
+        const isValid = (value) => {
+            if (value === null || value === undefined)
+                return false
+
+            return Object.keys(value).length > 0 && value.constructor === Object
         }
 
         return {
-            guns, gunsSelected, hpSelected, vestSelected, rangeSelected, rangeDamage, maxRange, stk, ttk, sttk,
+            guns, gunsSelected, hpSelected, vestSelected, rangeSelected, rangeDamage, maxRange, sttk,
             onGunChange, onHpChange, onVestChange, onRangeChange, calculate, setRangeDamage
         }
     }
