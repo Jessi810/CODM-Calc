@@ -46,8 +46,8 @@
         <div class="col-12 col-sm-8">
             <label for="input-group-range">Range to target</label>
             <div class="input-group" id="input-group-range">
-                <input type="range" class="form-control w-50" v-model="range_selected" @input="onRangeChange" min="0" :max="max_range" step="1">
-                <input type="number" class="form-control w-25" v-model="range_selected" @input="onRangeChange" min="0" :max="max_range" step="1">
+                <input type="range" class="form-control w-50" v-model="rangeSelected" @input="onRangeChange" min="0" :max="maxRange" step="1">
+                <input type="number" class="form-control w-25" v-model="rangeSelected" @input="onRangeChange" min="0" :max="maxRange" step="1">
                 <span class="input-group-text" id="basic-addon2">meters</span>
             </div>
         </div>
@@ -68,33 +68,33 @@
                             <div class="row justify-content-center">
                                 <div class="col-6 col-sm-4">
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="hp-100" v-model="hp_selected" @change="onHpChange" value="100">
+                                        <input type="radio" class="form-check-input" id="hp-100" v-model="hpSelected" @change="onHpChange" value="100">
                                         <label for="100" class="form-label">100 HP</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="hp-150" v-model="hp_selected" @change="onHpChange" value="150">
+                                        <input type="radio" class="form-check-input" id="hp-150" v-model="hpSelected" @change="onHpChange" value="150">
                                         <label for="150" class="form-label">150 HP</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="hp-250" v-model="hp_selected" @change="onHpChange" value="250">
+                                        <input type="radio" class="form-check-input" id="hp-250" v-model="hpSelected" @change="onHpChange" value="250">
                                         <label for="250" class="form-label">250 HP</label>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-4">
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="0">
+                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="0">
                                         <label for="vest-0" class="form-label">No Vest</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="25">
+                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="25">
                                         <label for="vest-1" class="form-label">Level 1</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="35">
+                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="35">
                                         <label for="vest-2" class="form-label">Level 2</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vest_selected" @change="onVestChange" value="45">
+                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="45">
                                         <label for="vest-3" class="form-label">Level 3</label>
                                     </div>
                                 </div>
@@ -190,46 +190,47 @@ export default {
                 burst_delay: 200
             }
         ])
-        const guns_selected = ref([])
-        const hp_selected = ref(100)
-        const vest_selected = ref(0)
-        const range_selected = ref(25)
-        const range_damage = ref([{ id: null, rng_dmg: [null] }, { id: null, rng_dmg: [null] }])
-        const max_range = ref(50)
+        const gunsSelected = ref([{}])
+        const hpSelected = ref(100)
+        const vestSelected = ref(0)
+        const rangeSelected = ref(25)
+        const rangeDamage = ref([{}])
+        const maxRange = ref(50)
         const stk = ref([])
         const ttk = ref([])
+        const sttk = ref([{}])
 
         // COMPUTED PROPERTIES
-        const onGunChange = (gun_index, gun_id) => {
-            if (gun_id == '') {
-                guns_selected.value[gun_index] = null
-                stk.value[gun_index] = null
-                ttk.value[gun_index] = null
-                range_damage.value[gun_index] = null
+        const onGunChange = (index, id) => {
+            if (id == '') {
+                gunsSelected.value[index] = null
+                stk.value[index] = null
+                ttk.value[index] = null
+                range_damage.value[index] = null
             }
             else {
-                guns_selected.value[gun_index] = guns.value.find(g => g.id == gun_id)
-                setDamageRange(gun_index, gun_id)
+                gunsSelected.value[index] = guns.value.find(g => g.id == id)
+                gunsSelected.value[index].index = index
+                setRangeDamage(index, id)
                 calculate()
             }
         }
         const calculate = () => {
-            let temp_hp = hp_selected.value
-            let temp_vest = vest_selected.value
-            let temp_range = range_selected.value
+            let temp_hp = hpSelected.value
+            let temp_vest = vestSelected.value
+            let temp_range = rangeSelected.value
             let temp_range_damage = range_damage.value
 
             let total_hp = temp_hp / ((100 - temp_vest) / 100)
 
 
-            for (let x = 0; x < 2; x++) // todo: change # of loop depending on # of guns_selected
+            for (let x = 0; x < 2; x++) // todo: change # of loop depending on # of gunsSelected
             {
-            console.log(guns_selected.value[x].firerate)
                 if (temp_range_damage[x] != null) {
                     stk.value[x] = Math.ceil(total_hp / temp_range_damage[x].rng_dmg[temp_range])
 
-                    if (guns_selected.value[x].firerate != undefined) {
-                        let temp_firerate = guns_selected.value[x].firerate
+                    if (gunsSelected.value[x].firerate != undefined) {
+                        let temp_firerate = gunsSelected.value[x].firerate
                         ttk.value[x] = Math.trunc(1000 / temp_firerate * 60 * (stk.value[x] - 1))
                     }
                 }
@@ -242,37 +243,38 @@ export default {
             calculate()
         }
         const onRangeChange = () => {
-            if (range_selected.value > max_range.value) {
-                range_selected.value = 50
+            if (rangeSelected.value > maxRange.value) {
+                rangeSelected.value = 50
             }
-            if (range_selected.value < 0) {
-                range_selected.value = 0
+            if (rangeSelected.value < 0) {
+                rangeSelected.value = 0
             }
             calculate()
         }
-        const setDamageRange = (gun_index, gun_id) => {
-            let temp_gun = guns.value.find(g => g.id == gun_id)
-            temp_gun.range.push(max_range.value)
-
-            let temp_range_damage = [
-                { id: '', rng_dmg: [] },
-                { id: '', rng_dmg: [] }
-            ]
-            temp_range_damage[gun_index].id = gun_id
-
-            let ctr = 0
-            for (let x = 0; x < temp_gun.damage.length; x++) {
-                for (let y = ctr; y <= temp_gun.range[x]; y++) {
-                    temp_range_damage[gun_index].rng_dmg.push(temp_gun.damage[x])
-                    ctr++
-                }
-            }
-            range_damage.value[gun_index] = temp_range_damage[gun_index]
+        const setRangeDamage = (index, id) => {
+            let temp_gun = gunsSelected.value[index]
+            temp_gun.range.push(maxRange.value)
         }
+        // const setDamageRange = (index, id) => {
+        //     let temp_gun = gunsSelected.value[index]
+        //     temp_gun.range.push(maxRange.value)
+
+        //     let temp_range_damage = [{}]
+        //     temp_range_damage[index].index = index
+
+        //     let ctr = 0
+        //     for (let x = 0; x < temp_gun.damage.length; x++) {
+        //         for (let y = ctr; y <= temp_gun.range[x]; y++) {
+        //             temp_range_damage[index].rng_dmg.push(temp_gun.damage[x])
+        //             ctr++
+        //         }
+        //     }
+        //     range_damage.value[index] = temp_range_damage[index]
+        // }
 
         return {
-            guns, guns_selected, hp_selected, vest_selected, range_selected, range_damage, max_range, stk, ttk,
-            onGunChange, onHpChange, onVestChange, onRangeChange, calculate, setDamageRange
+            guns, gunsSelected, hpSelected, vestSelected, rangeSelected, rangeDamage, maxRange, stk, ttk, sttk,
+            onGunChange, onHpChange, onVestChange, onRangeChange, calculate, setRangeDamage
         }
     }
 }
