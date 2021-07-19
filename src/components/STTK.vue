@@ -206,7 +206,7 @@ export default {
                 gunsSelected.value[index] = null
                 stk.value[index] = null
                 ttk.value[index] = null
-                range_damage.value[index] = null
+                rangeDamage.value[index] = null
             }
             else {
                 gunsSelected.value[index] = guns.value.find(g => g.id == id)
@@ -219,15 +219,15 @@ export default {
             let temp_hp = hpSelected.value
             let temp_vest = vestSelected.value
             let temp_range = rangeSelected.value
-            let temp_range_damage = range_damage.value
+            let temp_rangeDamage = rangeDamage.value
 
             let total_hp = temp_hp / ((100 - temp_vest) / 100)
 
 
             for (let x = 0; x < 2; x++) // todo: change # of loop depending on # of gunsSelected
             {
-                if (temp_range_damage[x] != null) {
-                    stk.value[x] = Math.ceil(total_hp / temp_range_damage[x].rng_dmg[temp_range])
+                if (temp_rangeDamage[x] != null) {
+                    stk.value[x] = Math.ceil(total_hp / temp_rangeDamage[x].rng_dmg[temp_range])
 
                     if (gunsSelected.value[x].firerate != undefined) {
                         let temp_firerate = gunsSelected.value[x].firerate
@@ -252,25 +252,30 @@ export default {
             calculate()
         }
         const setRangeDamage = (index, id) => {
-            let temp_gun = gunsSelected.value[index]
-            temp_gun.range.push(maxRange.value)
+            let tempGun = gunsSelected.value[index]
+            let tempRangeDamage = {}
+            tempRangeDamage.index = index
+            tempRangeDamage.id = id
+            tempRangeDamage.profile = []
+
+            let ctr = 0
+            let ctx = 0
+            let tempDamage
+
+            for (let x = 0; x < tempGun.range.length; x++)
+            {
+                tempDamage = tempGun.damage[x]
+                for (let y = ctr; y <= tempGun.range[x]; y++)
+                {
+                    tempRangeDamage.profile.push(tempDamage)
+                    ctr++
+                }
+                ctx++
+            }
+
+            tempRangeDamage.profile.push(tempGun.damage[ctx])
+            rangeDamage.value[index] = tempRangeDamage
         }
-        // const setDamageRange = (index, id) => {
-        //     let temp_gun = gunsSelected.value[index]
-        //     temp_gun.range.push(maxRange.value)
-
-        //     let temp_range_damage = [{}]
-        //     temp_range_damage[index].index = index
-
-        //     let ctr = 0
-        //     for (let x = 0; x < temp_gun.damage.length; x++) {
-        //         for (let y = ctr; y <= temp_gun.range[x]; y++) {
-        //             temp_range_damage[index].rng_dmg.push(temp_gun.damage[x])
-        //             ctr++
-        //         }
-        //     }
-        //     range_damage.value[index] = temp_range_damage[index]
-        // }
 
         return {
             guns, gunsSelected, hpSelected, vestSelected, rangeSelected, rangeDamage, maxRange, stk, ttk, sttk,
