@@ -86,19 +86,19 @@
                                 </div>
                                 <div class="col-6 col-sm-6">
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="0">
+                                        <input type="radio" class="form-check-input" id="vest-0" v-model="vestSelected" @change="onVestChange" value="0">
                                         <label for="vest-0" class="form-label">No Vest</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="25">
+                                        <input type="radio" class="form-check-input" id="vest-1" v-model="vestSelected" @change="onVestChange" value="25">
                                         <label for="vest-1" class="form-label">Level 1</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="35">
+                                        <input type="radio" class="form-check-input" id="vest-2" v-model="vestSelected" @change="onVestChange" value="35">
                                         <label for="vest-2" class="form-label">Level 2</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" v-model="vestSelected" @change="onVestChange" value="45">
+                                        <input type="radio" class="form-check-input" id="vest-3" v-model="vestSelected" @change="onVestChange" value="45">
                                         <label for="vest-3" class="form-label">Level 3</label>
                                     </div>
                                 </div>
