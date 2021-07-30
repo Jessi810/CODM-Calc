@@ -148,47 +148,82 @@ export default {
             {
                 id: 1010,
                 name: 'Type 25',
-                type: 'AR'
+                type: 'AR',
+                damage: [24, 22, 19, 16],
+                range: [10, 17, 25],
+                firerate: 769,
+                hitbox: {
+                    head: 1.2,
+                    chest: 1.1
+                }
             },
             {
                 id: 1020,
                 name: 'M16',
                 type: 'AR', 
-                damage: [30, 23, 21, 19],
-                range: [25, 36, 45],
+                damage: [30, 27, 22],
+                range: [21, 41],
                 firerate: 788,
+                hitbox: {
+                    head: 1.4,
+                    chest: 1.4,
+                    arms: 1.2
+                },
                 burst_round: 3,
                 burst_delay: 266
             },
             {
                 id: 1030,
                 name: 'AK117',
-                type: 'AR'
+                type: 'AR',
+                damage: [24, 20, 16],
+                range: [20, 36],
+                firerate: 769,
+                hitbox: {
+                    head: 1.15,
+                    legs: 0.9
+                }
             },
             {
                 id: 1040,
                 name: 'AK-47',
                 type: 'AR',
-                damage: [33, 26, 19],
-                range: [29, 36],
-                firerate: 548
+                damage: [33, 26, 23, 21],
+                range: [20, 30, 55],
+                firerate: 550,
+                hitbox: {
+                    head: 1.16
+                }
             },
             {
                 id: 1050,
                 name: 'ASM10',
-                type: 'AR'
+                type: 'AR',
+                damage: [34, 26, 20],
+                range: [15, 33],
+                firerate: 500,
+                hitbox: {
+                    head: 1.2
+                }
             },
             {
                 id: 1060,
                 name: 'M4',
-                type: 'AR'
+                type: 'AR',
+                damage: [24, 20, 19],
+                range: [16, 36],
+                firerate: 682,
+                hitbox: {
+                    head: 1.2,
+                    chest: 1.1
+                }
             },
             {
                 id: 1070,
                 name: 'BK57',
                 type: 'AR', 
                 damage: [27, 22, 19],
-                range: [19, 30],
+                range: [18, 30],
                 firerate: 665,
                 hitbox: {
                     head: 1.2
@@ -197,12 +232,25 @@ export default {
             {
                 id: 1080,
                 name: 'LK24',
-                type: 'AR'
+                type: 'AR',
+                damage: [26, 22, 18],
+                range: [23, 38],
+                firerate: 633,
+                hitbox: {
+                    head: 1.2
+                }
             },
             {
                 id: 1090,
                 name: 'ICR-1',
-                type: 'AR'
+                type: 'AR',
+                damage: [26, 24, 20, 19],
+                range: [16, 26, 36],
+                firerate: 600,
+                hitbox: {
+                    head: 1.2,
+                    chest: 1.1
+                }
             },
             {
                 id: 1100,
@@ -212,7 +260,14 @@ export default {
             {
                 id: 1110,
                 name: 'KN-44',
-                type: 'AR'
+                type: 'AR',
+                firerate: 633,
+                damage: [26, 24, 19],
+                range: [20, 33],
+                hitbox: {
+                    head: 1.2,
+                    chest: 1.1
+                }
             },
             {
                 id: 1120,
@@ -227,16 +282,23 @@ export default {
                 name: 'HVK-30',
                 type: 'AR', 
                 damage: [23, 18, 16],
-                range: [21, 34],
-                firerate: 711
+                range: [22, 34],
+                firerate: 711,
+                hitbox: {
+                    head: 1.3
+                }
             },
             {
                 id: 1131,
                 name: 'HVK-30 (LC)',
                 type: 'AR', 
-                damage: [34, 24, 19],
-                range: [7, 46],
-                firerate: 711
+                damage: [35, 24, 19],
+                range: [5, 26],
+                firerate: 711,
+                hitbox: {
+                    head: 1.6,
+                    legs: 0.8
+                }
             },
             {
                 id: 1140,
@@ -245,13 +307,39 @@ export default {
             },
             {
                 id: 1150,
-                name: 'Peacekeeper MK2',
-                type: 'AR'
+                name: 'Peacekeeper MK2 (LRB)',
+                type: 'AR',
+                damage: [26, 24, 19, 18],
+                range: [22, 52, 82],
+                firerate: 652,
+                hitbox: {
+                    head: 1.2,
+                    chest: 1.1
+                }
+            },
+            {
+                id: 1151,
+                name: 'Peacekeeper MK2 (RFB)',
+                type: 'AR',
+                damage: [31, 29, 18, 16],
+                range: [6, 16, 26],
+                firerate: 740,
+                hitbox: {
+                    head: 1.23,
+                    chest: 1.1
+                }
             },
             {
                 id: 1160,
                 name: 'FR .556',
-                type: 'AR'
+                type: 'AR',
+                damage: [25, 19],
+                range: [26],
+                firerate: 675,
+                hitbox: {
+                    head: 1.2,
+                    chest: 1.2
+                }
             },
             {
                 id: 1170,
@@ -261,23 +349,22 @@ export default {
                 range: [7, 20, 30],
                 firerate: 800,
                 hitbox: {
-                    head: 1.5, upper_torso: 1.1, lower_torso: 1,
-                    groin: 1, arms: 1, legs: 1
-                },
-                credits: {
-                    name: 'Mrroey', link: 'https://discordapp.com/users/265688979880280064'
+                    head: 1.5,
+                    chest: 1.1
                 }
             },
-            {
+            { // need verification
                 id: 1180,
                 name: 'CR-56 AMAX',
                 type: 'AR', 
-                damage: [25, 24, 20, 16],
+                damage: [32, 31, 26, 20],
                 range: [13, 18, 26],
                 firerate: 710,
                 hitbox: {
-                    head: 1.5, upper_torso: 1.3, lower_torso: 1.1,
-                    groin: 1, arms: { upper: 1.1, lower: 1 }, legs: 1
+                    head: 1.16,
+                    stomach: 0.84,
+                    arms: 0.84,
+                    legs: 0.79
                 }
             },
             {
@@ -293,12 +380,24 @@ export default {
             {
                 id: 3030,
                 name: 'RPD',
-                type: 'LMG'
+                type: 'LMG',
+                damage: [31, 23, 18],
+                range: [21, 56],
+                firerate: 666,
+                hitbox: {
+                    head: 1.2
+                }
             },
             {
                 id: 3040,
-                name: 'M4 LMG',
-                type: 'LMG'
+                name: 'M4LMG',
+                type: 'LMG',
+                damage: [32, 23, 19],
+                range: [21, 51],
+                firerate: 633,
+                hitbox: {
+                    head: 1.1
+                }
             },
             {
                 id: 3050,
@@ -311,19 +410,22 @@ export default {
                 type: 'LMG',
                 damage: [31, 25, 21, 19],
                 range: [17, 25, 51],
-                firerate: 706,
+                firerate: 710,
                 hitbox: {
-                    head: 1.2, upper_torso: 1, lower_torso: 1,
-                    groin: 1, arms: 1, legs: 1
-                },
-                credits: {
-                    name: 'Mrroey', link: 'https://discordapp.com/users/265688979880280064'
+                    head: 1.2
                 }
             },
             {
                 id: 4010,
                 name: 'RUS-79U',
-                type: 'SMG'
+                type: 'SMG',
+                damage: [28, 24, 18, 15],
+                range: [5, 19, 33],
+                firerate: 769,
+                hitbox: {
+                    head: 1.1,
+                    legs: 0.9
+                }
             },
             {
                 id: 4020,
@@ -333,7 +435,14 @@ export default {
             {
                 id: 4030,
                 name: 'PDW-57',
-                type: 'SMG'
+                type: 'SMG',
+                damage: [27, 22, 17, 15],
+                range: [6, 15, 28],
+                firerate: 600,
+                hitbox: {
+                    head: 1.1,
+                    legs: 0.9
+                }
             },
             {
                 id: 4040,
@@ -341,18 +450,27 @@ export default {
                 type: 'SMG'
             },
             {
+                id: 4040,
+                name: 'Razorback (RF)',
+                type: 'SMG',
+                damage: [30, 23, 19],
+                range: [16, 29],
+                firerate: 703,
+                hitbox: {
+                    head: 1.1,
+                    legs: 0.9
+                }
+            },
+            {
                 id: 4050,
                 name: 'MSMC',
                 type: 'SMG',
-                damage: [25, 21, 18, 17],
-                range: [9, 15, 19],
-                firerate: 878,
+                damage: [25, 21, 18, 16],
+                range: [8, 14, 19],
+                firerate: 916,
                 hitbox: {
-                    head: 1.1, upper_torso: 1, lower_torso: 1,
-                    groin: 1, arms: 1, legs: 0.9
-                },
-                credits: {
-                    name: 'READ ABOUT ME AND RETWEET#2590', link: 'https://discordapp.com/users/302829483075829761'
+                    head: 1.1,
+                    legs: 0.9
                 }
             },
             {
@@ -378,35 +496,59 @@ export default {
             {
                 id: 4100,
                 name: 'QQ9',
-                type: 'SMG'
+                type: 'SMG',
+                damage: [25, 23, 17, 15],
+                range: [11, 16, 21],
+                firerate: 850,
+                hitbox: {
+                    head: 1.1,
+                    legs: 0.9
+                }
             },
             {
                 id: 4110,
                 name: 'Fennec',
                 type: 'SMG',
                 damage: [23, 18, 13, 12],
-                range: [16, 21, 29],
+                range: [16, 21, 28],
                 firerate: 1110,
                 hitbox: {
-                    head: 1.1, upper_torso: 1.1, lower_torso: 1,
-                    groin: 0.9, arms: 0.9, legs: 0.9
+                    head: 1.1,
+                    upper_torso: 1.1,
+                    lower_torso: 1,
+                    groin: 0.9,
+                    arms: 0.9,
+                    legs: 0.9
                 }
             },
             {
                 id: 4120,
                 name: 'AGR 556',
-                type: 'SMG'
+                type: 'SMG',
+            },
+            {
+                id: 4120,
+                name: 'AGR 556 (5.56)',
+                type: 'SMG',
+                damage: [27, 23, 20, 18],
+                range: [15, 20, 30],
+                firerate: 682,
+                hitbox: {
+                    head: 1.05,
+                    legs: 0.9
+                }
             },
             {
                 id: 4130,
                 name: 'QXR',
                 type: 'SMG',
                 damage: [22, 19, 16, 12],
-                range: [9, 16, 26],
-                firerate: 860,
+                range: [8, 15, 25],
+                firerate: 889,
                 hitbox: {
-                    head: 1.3, upper_torso: 1.3, lower_torso: 0.9,
-                    groin: 0.9, arms: 0.9, legs: 0.9
+                    head: 1.3,
+                    chest: 1.3,
+                    legs: 0.9
                 }
             },
             {
@@ -414,11 +556,12 @@ export default {
                 name: 'QXR (EB)',
                 type: 'SMG',
                 damage: [22, 19, 16, 12],
-                range: [9, 16, 26],
-                firerate: 1000,
+                range: [8, 15, 20],
+                firerate: 1029,
                 hitbox: {
-                    head: 1.3, upper_torso: 1.1, lower_torso: 0.9,
-                    groin: 0.9, arms: 0.9, legs: 0.9
+                    head: 1.3,
+                    chest: 1.1,
+                    legs: 0.9
                 }
             },
             {
@@ -443,6 +586,18 @@ export default {
                 hitbox: {
                     head: 1.2, upper_torso: 1, lower_torso: 1,
                     groin: 1, arms: 1, legs: 1
+                }
+            },
+            {
+                id: 4150,
+                name: 'MX9',
+                type: 'SMG',
+                damage: [30, 24, 16, 15],
+                range: [12, 16, 21],
+                firerate: 850,
+                hitbox: {
+                    head: 1.1,
+                    legs: 0.9
                 }
             },
             {
@@ -472,9 +627,6 @@ export default {
                 hitbox: {
                     head: 2, upper_torso: 1.6, lower_torso: 1,
                     groin: 1, arms: 1.6, legs: 1
-                },
-                credits: {
-                    name: 'Mrroey', link: 'https://discordapp.com/users/265688979880280064'
                 }
             }
         ])
