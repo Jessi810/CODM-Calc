@@ -1,46 +1,91 @@
 <template>
-    <input type="range" v-model="range" @input="rangeChanged" min="0" max="100" step="1">
-    <input type="number" v-model="range" @input="rangeChanged" min="0" max="100">
-    <br>
-    <input type="radio" v-model="hp" @change="hpChanged" value="30">30 HP
-    <input type="radio" v-model="hp" @change="hpChanged" value="100">100 HP
-    <input type="radio" v-model="hp" @change="hpChanged" value="150">150 HP
-    <input type="radio" v-model="hp" @change="hpChanged" value="250">250 HP
-    <br>
-    <input type="radio" v-model="vest" @change="vestChanged" value="0">No Vest
-    <input type="radio" v-model="vest" @change="vestChanged" value="25">Lv 1
-    <input type="radio" v-model="vest" @change="vestChanged" value="35">Lv 2
-    <input type="radio" v-model="vest" @change="vestChanged" value="45">Lv 3
-    <br>
-    <input type="radio" v-model="hitbox" @change="hitboxChanged" value="head">Head
-    <input type="radio" v-model="hitbox" @change="hitboxChanged" value="chest">Chest
-    <input type="radio" v-model="hitbox" @change="hitboxChanged" value="stomach">Stomach
-    <input type="radio" v-model="hitbox" @change="hitboxChanged" value="arms">Arms
-    <input type="radio" v-model="hitbox" @change="hitboxChanged" value="legs">Legs
-    <input type="radio" v-model="hitbox" @change="hitboxChanged" value="groin">Groin
-    <table class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th></th>
-                <th>TTK</th>
-                <th>STK</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="gun in guns" :key="gun.id">
-                <td>
-                    {{ gun.name }} <br>
-                    {{ hitbox }}: {{ gun.hitbox[hitbox] ?? '1' }}
-                </td>
-                <td>{{ gun.ttk }} ms</td>
-                <td>{{ gun.stk }} {{ gun.stk < 2 ? 'shot' : 'shots' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <label for="" class="form-label">Range to target</label>
+                <div class="input-group">
+                    <input type="range" class="form-range w-75" style="height: auto;" id="range-slider" v-model="range" @input="rangeChanged" min="0" max="100" step="1">
+                    <input type="number" class="form-control w-25" id="range-number" v-model="range" @input="rangeChanged" min="0" max="100">
+                </div>
+
+                <br><br>
+
+                <div class="btn-group">
+                    <input type="radio" class="btn-check" id="hp30" v-model="hp" @change="hpChanged" value="30">
+                    <label for="hp30" class="btn btn-secondary">30 HP</label>
+                    <input type="radio" class="btn-check" id="hp100" v-model="hp" @change="hpChanged" value="100">
+                    <label for="hp100" class="btn btn-secondary">100 HP</label>
+                    <input type="radio" class="btn-check" id="hp150" v-model="hp" @change="hpChanged" value="150">
+                    <label for="hp150" class="btn btn-secondary">150 HP</label>
+                    <input type="radio" class="btn-check" id="hp250" v-model="hp" @change="hpChanged" value="250">
+                    <label for="hp250" class="btn btn-secondary">250 HP</label>
+                </div>
+
+                <br><br>
+
+                <div class="btn-group">
+                    <input type="radio" class="btn-check" id="vest0" v-model="vest" @change="vestChanged" value="0">
+                    <label for="vest0" class="btn btn-secondary">No Vest</label>
+                    <input type="radio" class="btn-check" id="vest25" v-model="vest" @change="vestChanged" value="25">
+                    <label for="vest25" class="btn btn-secondary">Lv 1</label>
+                    <input type="radio" class="btn-check" id="vest35" v-model="vest" @change="vestChanged" value="35">
+                    <label for="vest35" class="btn btn-secondary">Lv 2</label>
+                    <input type="radio" class="btn-check" id="vest45" v-model="vest" @change="vestChanged" value="45">
+                    <label for="vest45" class="btn btn-secondary">Lv 3</label>
+                </div>
+
+                <br><br>
+
+                <div class="btn-group">
+                    <input type="radio" class="btn-check" id="hb-head" v-model="hitbox" @change="hitboxChanged" value="head">
+                    <label for="hb-head" class="btn btn-secondary">Head</label>
+                    <input type="radio" class="btn-check" id="hb-chest" v-model="hitbox" @change="hitboxChanged" value="chest">
+                    <label for="hb-chest" class="btn btn-secondary">Chest</label>
+                    <input type="radio" class="btn-check" id="hb-stomach" v-model="hitbox" @change="hitboxChanged" value="stomach">
+                    <label for="hb-stomach" class="btn btn-secondary">Stomach</label>
+                </div>
+                <div class="btn-group">
+                    <input type="radio" class="btn-check" id="hb-arms" v-model="hitbox" @change="hitboxChanged" value="arms">
+                    <label for="hb-arms" class="btn btn-secondary">Arms</label>
+                    <input type="radio" class="btn-check" id="hb-legs" v-model="hitbox" @change="hitboxChanged" value="legs">
+                    <label for="hb-legs" class="btn btn-secondary">Legs</label>
+                    <input type="radio" class="btn-check" id="hb-groin" v-model="hitbox" @change="hitboxChanged" value="groin">
+                    <label for="hb-groin" class="btn btn-secondary">Groin</label>
+                </div>
+
+                <br><br>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-hover table-bordered table-sm table-responsive">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Type</th>
+                            <th>TTK</th>
+                            <th>STK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="gun in guns" :key="gun.id">
+                            <td>
+                                {{ gun.name }}
+                            </td>
+                            <td>{{ parseGunType(gun.type) }}</td>
+                            <td>{{ gun.ttk }} ms</td>
+                            <td>{{ gun.stk }} {{ gun.stk < 2 ? 'shot' : 'shots' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-import { ref, computed, onMounted } from 'vue'
+import { ref } from 'vue'
 import { gunStats } from '@/gun-stats.js'
 import { Gun } from '@/assets/js/gun.js'
 
@@ -137,6 +182,21 @@ export default {
             }
         }
 
+        const parseGunType = (value) => {
+            switch (value) {
+                case 'AR':
+                    return 'Assault Rifle'
+                case 'SMG':
+                    return 'Submachine Gun'
+                case 'LMG':
+                    return 'Light Machine GUn'
+                case 'HG':
+                    return 'Handgun'
+                default:
+                    return 'Other'
+            }
+        }
+
         return {
             guns,
             hp,
@@ -147,7 +207,8 @@ export default {
             hpChanged,
             vestChanged,
             hitboxChanged,
-            rangeChanged
+            rangeChanged,
+            parseGunType
         }
     }
 }
