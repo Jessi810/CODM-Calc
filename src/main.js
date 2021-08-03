@@ -5,6 +5,6 @@ import App from './App.vue'
 // require('@/assets/css/bootstrap-flatly.css')
 // import 'bootstrap/dist/js/bootstrap.min.js'
 import router from './router'
-// import 'jquery/src/jquery.js'
+require('datatables.net-bs5');
 
 createApp(App).use(router).mount('#app')
