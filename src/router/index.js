@@ -5,13 +5,18 @@ import Cheatsheet from '../components/Cheatsheet.vue'
 const routes = [
   {
     path: '/',
-    name: 'STTK',
-    component: STTK
+    name: 'Home',
+    component: Cheatsheet
   },
   {
     path: '/cheatsheet',
     name: 'Cheatsheet',
     component: Cheatsheet
+  },
+  {
+    path: '/sttk',
+    name: 'STTK',
+    component: STTK
   }
 ]
 

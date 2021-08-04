@@ -1,22 +1,25 @@
 <template>
+  <!-- <Navbar /> -->
   <div id="nav">
-    <router-link :to="{ name: 'STTK' }">STK & TTK</router-link> |
-    <router-link :to="{ name: 'Cheatsheet' }">Cheatsheet</router-link>
+    <router-link :to="{ name: 'Cheatsheet' }">Cheatsheet</router-link> | 
+    <router-link :to="{ name: 'STTK' }">STK & TTK</router-link>
   </div>
   <router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Navbar from '@/components/Navbar.vue'
+export default {
+  components: {
+    Navbar
+  }
 }
+</script>
 
+<style>
 #nav {
   padding: 30px;
+  text-align: center;
 }
 
 #nav a {
