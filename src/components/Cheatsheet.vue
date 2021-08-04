@@ -92,6 +92,87 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Show/Hide
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-mdb-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Assault Rifles:</strong>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" id="cbSelectAllAR" @click="showOrHideGun('AR', $event)" checked>
+                                                Select all AR
+                                            </label>
+                                        </div>
+                                        <div v-for="gun in guns" :key="gun.id">
+                                            <div class="form-check" v-if="gun.type === 'AR'">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideAR" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllAR')" checked>
+                                                    {{ gun.name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Submachine Guns:</strong>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" id="cbSelectAllSMG" @click="showOrHideGun('SMG', $event)" checked>
+                                                Select all SMG
+                                            </label>
+                                        </div>
+                                        <div v-for="gun in guns" :key="gun.id">
+                                            <div class="form-check" v-if="gun.type === 'SMG'">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideSMG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllSMG')" checked>
+                                                    {{ gun.name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Handguns:</strong>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" id="cbSelectAllHG" @click="showOrHideGun('HG', $event)" checked>
+                                                Select all HG
+                                            </label>
+                                        </div>
+                                        <div v-for="gun in guns" :key="gun.id">
+                                            <div class="form-check" v-if="gun.type === 'HG'">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideLMG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllHG')" checked>
+                                                    {{ gun.name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Light Machine Guns:</strong>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" id="cbSelectAllLMG" @click="showOrHideGun('LMG', $event)" checked>
+                                                Select all LMG
+                                            </label>
+                                        </div>
+                                        <div v-for="gun in guns" :key="gun.id">
+                                            <div class="form-check" v-if="gun.type === 'LMG'">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideHG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllLMG')" checked>
+                                                    {{ gun.name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,7 +191,6 @@
 
         <!-- Table -->
         <div class="row justify-content-center my-3">
-
             <div class="col-sm-10 col-md-8">
                 <!-- <div class="table-responsive"> -->
                     <table class="table table-hover table-bordered table-sm" id="cheatsheet-table">
@@ -124,7 +204,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="gun in guns" :key="gun.id">
+                            <tr v-for="gun in guns" :key="gun.id" :id="gun.type + gun.id" :name="'rowGun' + gun.type">
                                 <th hidden>{{ gun.id }}</th>
                                 <td>
                                     {{ gun.name }}
@@ -253,6 +333,67 @@ export default {
             }
         }
 
+        /*
+            @param id = ID attribute of element that called this method
+            @param event = Event object
+        */
+        const showOrHideGun = (id, event, idSelectAll) => {
+            if (id === 'AR' || id === 'SMG' || id === 'LMG' || id === 'HG') {
+                let checkboxes, rowGuns
+
+                switch (id) {
+                    case 'AR':
+                        checkboxes = document.getElementsByName('cbShowHideAR')
+                        rowGuns = document.getElementsByName('rowGunAR')
+                        break
+                    case 'SMG':
+                        checkboxes = document.getElementsByName('cbShowHideSMG')
+                        rowGuns = document.getElementsByName('rowGunSMG')
+                        break
+                    case 'LMG':
+                        checkboxes = document.getElementsByName('cbShowHideLMG')
+                        rowGuns = document.getElementsByName('rowGunLMG')
+                        break
+                    case 'HG':
+                        checkboxes = document.getElementsByName('cbShowHideHG')
+                        rowGuns = document.getElementsByName('rowGunHG')
+                        break
+                }
+
+                for (let checkbox of checkboxes) {
+                    checkbox.checked = event.target.checked
+                }
+                for (let rowGun of rowGuns) {
+                    rowGun.hidden = !event.target.checked
+                }
+            }
+            else {
+                document.getElementById(id).hidden = !event.target.checked
+
+                let checkboxes = document.getElementsByName(event.target.name)
+
+                check_all: {
+                    // Uncheck 'Select All AR|SMG|LMG|HG' checkbox if an item/s is unchecked
+                    for (let checkbox of checkboxes) {
+                        if (checkbox.checked === false) {
+                            document.getElementById(idSelectAll).checked = false
+                            break check_all
+                        }
+                    }
+
+                    // Check 'Select All AR|SMG|LMG|HG' checkbox if ALL items is checked
+                    let compare = true
+                    for (let checkbox of checkboxes) {
+                        if (!(compare && checkbox.checked)) {
+                            compare = false
+                            break
+                        }
+                    }
+                    document.getElementById(idSelectAll).checked = compare
+                }
+            }
+        }
+
         onMounted(() => {
 
             initializeTable()
@@ -277,7 +418,8 @@ export default {
             vestChanged,
             hitboxChanged,
             rangeChanged,
-            parseGunType
+            parseGunType,
+            showOrHideGun
         }
     }
 }
