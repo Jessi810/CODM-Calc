@@ -210,8 +210,8 @@
                                     {{ gun.name }}
                                 </td>
                                 <!-- <td>{{ parseGunType(gun.type) }}</td> -->
-                                <td>{{ gun.ttk }} ms</td>
-                                <td>{{ gun.stk }} {{ gun.stk < 2 ? 'shot' : 'shots' }}</td>
+                                <td>{{ gun.sttk.ttk[range] }} ms</td>
+                                <td>{{ gun.sttk.stk[range] }} {{ gun.sttk.stk[range] < 2 ? 'shot' : 'shots' }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -231,89 +231,45 @@ export default {
     setup() {
         const hp = ref(100)
         const vest = ref(0)
-        const range = ref(25)
+        const range = ref(0)
         const hitbox = ref('chest')
 
-        let guns = ref([])
-
-        const initializeTable = () => {
-            for (let [i, gun] of gunStats.entries())
-            {
-                guns.value[i] = new Gun(gunStats[i])
-                guns.value[i].damageProfile = guns.value[i].generateDamageProfile()
-                guns.value[i].stk = guns.value[i].computeStk({
-                    hp: hp.value,
-                    range: range.value,
-                    damageProfile: guns.value[i].damageProfile,
-                    vest: vest.value,
-                    hitbox: hitbox.value
-                })
-                guns.value[i].ttk = guns.value[i].computeTtk({
-                    stk: guns.value[i].stk
-                })
-            }
+        const guns = ref([{}])
+        
+        for (let [i, val] of gunStats.entries())
+        {
+            guns.value[i] = new Gun(val)
+            guns.value[i].sttk = guns.value[i].sttk({
+                hp: hp.value,
+                vest: vest.value,
+                hitbox: hitbox.value
+            })
         }
 
         const hpChanged = () => {
-            for (let [i, gun] of gunStats.entries())
-            {
-                guns.value[i].stk = guns.value[i].computeStk({
-                    hp: hp.value,
-                    range: range.value,
-                    damageProfile: guns.value[i].damageProfile,
-                    vest: vest.value,
-                    hitbox: hitbox.value
-                })
-                guns.value[i].ttk = guns.value[i].computeTtk({
-                    stk: guns.value[i].stk
-                })
-            }
+            computeSttk()
         }
 
         const vestChanged = () => {
-            for (let [i, gun] of gunStats.entries())
-            {
-                guns.value[i].stk = guns.value[i].computeStk({
-                    hp: hp.value,
-                    range: range.value,
-                    damageProfile: guns.value[i].damageProfile,
-                    vest: vest.value,
-                    hitbox: hitbox.value
-                })
-                guns.value[i].ttk = guns.value[i].computeTtk({
-                    stk: guns.value[i].stk
-                })
-            }
+            computeSttk()
         }
 
         const hitboxChanged = () => {
-            for (let [i, gun] of gunStats.entries())
-            {
-                guns.value[i].stk = guns.value[i].computeStk({
-                    hp: hp.value,
-                    range: range.value,
-                    damageProfile: guns.value[i].damageProfile,
-                    vest: vest.value,
-                    hitbox: hitbox.value
-                })
-                guns.value[i].ttk = guns.value[i].computeTtk({
-                    stk: guns.value[i].stk
-                })
-            }
+            computeSttk()
         }
 
         const rangeChanged = () => {
-            for (let [i, gun] of gunStats.entries())
+            computeSttk()
+        }
+
+        const computeSttk = () => {
+            for (let [i, val] of gunStats.entries())
             {
-                guns.value[i].stk = guns.value[i].computeStk({
+                guns.value[i] = new Gun(val)
+                guns.value[i].sttk = guns.value[i].sttk({
                     hp: hp.value,
-                    range: range.value,
-                    damageProfile: guns.value[i].damageProfile,
                     vest: vest.value,
                     hitbox: hitbox.value
-                })
-                guns.value[i].ttk = guns.value[i].computeTtk({
-                    stk: guns.value[i].stk
                 })
             }
         }
@@ -333,10 +289,6 @@ export default {
             }
         }
 
-        /*
-            @param id = ID attribute of element that called this method
-            @param event = Event object
-        */
         const showOrHideGun = (id, event, idSelectAll) => {
             if (id === 'AR' || id === 'SMG' || id === 'LMG' || id === 'HG') {
                 let checkboxes, rowGuns
@@ -395,9 +347,6 @@ export default {
         }
 
         onMounted(() => {
-
-            initializeTable()
-
             $(document).ready(function () {
                 $('#cheatsheet-table').DataTable({
                     paging: false,
@@ -413,11 +362,11 @@ export default {
             vest,
             range,
             hitbox,
-            initializeTable,
             hpChanged,
             vestChanged,
             hitboxChanged,
             rangeChanged,
+            computeSttk,
             parseGunType,
             showOrHideGun
         }
