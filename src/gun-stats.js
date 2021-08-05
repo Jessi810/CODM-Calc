@@ -18,13 +18,15 @@ const gunStats = [
         damage: [30, 27, 22],
         range: [21, 41],
         firerate: 788,
+        burst: {
+            rounds: 3,
+            delay: 266
+        },
         hitbox: {
             head: 1.4,
             chest: 1.4,
             arms: 1.2
-        },
-        burst_round: 3,
-        burst_delay: 266
+        }
     },
     {
         id: 1030,
@@ -478,8 +480,10 @@ const gunStats = [
         damage: [30, 23, 21, 19],
         range: [25, 36, 45],
         firerate: 720,
-        burst_round: 3,
-        burst_delay: 333,
+        burst: {
+            rounds: 3,
+            delay: 333
+        },
         hitbox: {
             head: 2,
             chest: 1.6,
