@@ -1,6 +1,7 @@
 
 function Gun(gun)
 {
+    this.id = gun.id
     this.name = gun.name
     this.type = gun.type
     this.damage = gun.damage
