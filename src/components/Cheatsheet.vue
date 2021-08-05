@@ -146,7 +146,7 @@
                                         <div v-for="gun in guns" :key="gun.id">
                                             <div class="form-check" v-if="gun.type === 'HG'">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideLMG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllHG')" checked>
+                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideHG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllHG')" checked>
                                                     {{ gun.name }}
                                                 </label>
                                             </div>
@@ -163,7 +163,7 @@
                                         <div v-for="gun in guns" :key="gun.id">
                                             <div class="form-check" v-if="gun.type === 'LMG'">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideHG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllLMG')" checked>
+                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideLMG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllLMG')" checked>
                                                     {{ gun.name }}
                                                 </label>
                                             </div>
