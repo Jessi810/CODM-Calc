@@ -183,7 +183,7 @@
                 <strong>Range to target</strong>
                 <div class="input-group">
                     <input type="range" class="form-control w-50" style="height: auto;" id="range-slider" v-model="range" @input="rangeChanged" min="0" max="100" step="1">
-                    <input type="number" class="form-control w-25" id="range-number" v-model="range" @input="rangeChanged" min="0" max="100">
+                    <input type="number" class="form-control w-25" id="range-number" style="max-width: 100px;" v-model="range" @input="rangeChanged" min="0" max="100">
                     <span class="input-group-text">meters</span>
                 </div>
             </div>
@@ -197,10 +197,10 @@
                         <thead>
                             <tr>
                                 <th hidden></th>
-                                <th>Gun</th>
+                                <th @click="sortColumn('name')">Gun</th>
                                 <!-- <th>Type</th> -->
-                                <th>TTK</th>
-                                <th>STK</th>
+                                <th @click="sortColumn('ttk')">TTK</th>
+                                <th @click="sortColumn('stk')">STK</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -233,6 +233,7 @@ export default {
         const vest = ref(0)
         const range = ref(0)
         const hitbox = ref('chest')
+        const currentSort = ref('id')
 
         const guns = ref([{}])
         
@@ -263,7 +264,7 @@ export default {
         }
 
         const computeSttk = () => {
-            for (let [i, val] of gunStats.entries())
+            for (let [i, val] of guns.value.entries())
             {
                 guns.value[i] = new Gun(val)
                 guns.value[i].sttk = guns.value[i].sttk({
@@ -271,6 +272,49 @@ export default {
                     vest: vest.value,
                     hitbox: hitbox.value
                 })
+            }
+
+            // console.log('currentSort.value', currentSort.value)
+            // let t = guns.value
+            // console.log('options:before', t)
+            // guns.value.sort(sortByKey(currentSort.value))
+            // console.log('options:after', guns.value)
+        }
+
+        const sortColumn = (s) => {
+            switch (s) {
+                case 'name' || '-name':
+                    currentSort.value = (currentSort.value === 'name') ? currentSort.value = '-name' : 'name'
+                    guns.value.sort(sortByKey(currentSort.value))
+                    break
+                case 'ttk' || '-ttk':
+                    currentSort.value = (currentSort.value === 'ttk') ? currentSort.value = '-ttk' : 'ttk'
+                    guns.value.sort(sortByKey(currentSort.value))
+                    break
+                case 'stk' || '-stk':
+                    currentSort.value = (currentSort.value === 'stk') ? currentSort.value = '-stk' : 'stk'
+                    guns.value.sort(sortByKey(currentSort.value))
+                    break
+            }
+        }
+
+        function sortByKey(property) {
+            let sortOrder = 1
+
+            if(property[0] === "-") {
+                sortOrder = -1
+                property = property.substr(1);
+            }
+
+            return function (a, b) {
+                let result
+
+                if (property === 'ttk' || property === 'stk')
+                    result = (a.sttk[property] < b.sttk[property]) ? -1 : (a.sttk[property] > b.sttk[property]) ? 1 : 0
+                else
+                    result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
+
+                return result * sortOrder;
             }
         }
 
@@ -347,13 +391,14 @@ export default {
         }
 
         onMounted(() => {
-            $(document).ready(function () {
-                $('#cheatsheet-table').DataTable({
-                    paging: false,
-                    searching: false,
-                    order: [0, 'asc']
-                })
-            })
+            // $(document).ready(function () {
+            //     $('#cheatsheet-table').DataTable({
+            //         paging: false,
+            //         searching: false,
+            //         order: [0, 'asc'],
+            //         responsive: true
+            //     })
+            // })
         })
 
         return {
@@ -362,13 +407,15 @@ export default {
             vest,
             range,
             hitbox,
+            currentSort,
             hpChanged,
             vestChanged,
             hitboxChanged,
             rangeChanged,
             computeSttk,
             parseGunType,
-            showOrHideGun
+            showOrHideGun,
+            sortColumn
         }
     }
 }
