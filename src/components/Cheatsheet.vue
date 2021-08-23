@@ -192,30 +192,24 @@
         <!-- Table -->
         <div class="row justify-content-center my-3">
             <div class="col-sm-10 col-md-8">
-                <!-- <div class="table-responsive"> -->
-                    <table class="table table-hover table-bordered table-sm" id="cheatsheet-table">
-                        <thead>
-                            <tr>
-                                <th hidden></th>
-                                <th @click="sortColumn('name')">Gun</th>
-                                <!-- <th>Type</th> -->
-                                <th @click="sortColumn('ttk')">TTK</th>
-                                <th @click="sortColumn('stk')">STK</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="gun in guns" :key="gun.id" :id="gun.type + gun.id" :name="'rowGun' + gun.type">
-                                <th hidden>{{ gun.id }}</th>
-                                <td>
-                                    {{ gun.name }}
-                                </td>
-                                <!-- <td>{{ parseGunType(gun.type) }}</td> -->
-                                <td>{{ gun.sttk.ttk[range] }} ms</td>
-                                <td>{{ gun.sttk.stk[range] }} {{ gun.sttk.stk[range] < 2 ? 'shot' : 'shots' }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <!-- </div> -->
+                <table class="table table-hover table-bordered table-sm" id="cheatsheet-table">
+                    <thead>
+                        <tr>
+                            <th hidden></th>
+                            <th @click="sortColumn('name')">Gun</th>
+                            <th @click="sortColumn('ttk')">TTK</th>
+                            <th @click="sortColumn('stk')">STK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="gun in guns" :key="gun.id" :id="gun.type + gun.id" :name="'rowGun' + gun.type">
+                            <th hidden>{{ gun.id }}</th>
+                            <td>{{ gun.name }}</td>
+                            <td>{{ gun.sttk.ttk[range] }} ms</td>
+                            <td>{{ gun.sttk.stk[range] }} {{ gun.sttk.stk[range] < 2 ? 'shot' : 'shots' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -273,29 +267,22 @@ export default {
                     hitbox: hitbox.value
                 })
             }
-
-            // console.log('currentSort.value', currentSort.value)
-            // let t = guns.value
-            // console.log('options:before', t)
-            // guns.value.sort(sortByKey(currentSort.value))
-            // console.log('options:after', guns.value)
         }
 
         const sortColumn = (s) => {
             switch (s) {
                 case 'name' || '-name':
                     currentSort.value = (currentSort.value === 'name') ? currentSort.value = '-name' : 'name'
-                    guns.value.sort(sortByKey(currentSort.value))
                     break
                 case 'ttk' || '-ttk':
                     currentSort.value = (currentSort.value === 'ttk') ? currentSort.value = '-ttk' : 'ttk'
-                    guns.value.sort(sortByKey(currentSort.value))
                     break
                 case 'stk' || '-stk':
                     currentSort.value = (currentSort.value === 'stk') ? currentSort.value = '-stk' : 'stk'
-                    guns.value.sort(sortByKey(currentSort.value))
                     break
             }
+            
+            guns.value.sort(sortByKey(currentSort.value))
         }
 
         function sortByKey(property) {
