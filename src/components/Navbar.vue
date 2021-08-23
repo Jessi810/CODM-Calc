@@ -29,7 +29,11 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- Link -->
                 <li class="nav-item">
-                  <router-link :to="{ name: 'Cheatsheet' }">Cheatsheet&nbsp;&nbsp;</router-link>
+                  <router-link :to="{ name: 'Cheatsheet' }">Cheatsheet</router-link>
+                </li>
+                <span class="d-none d-lg-block">&nbsp;|&nbsp;</span>
+                <li class="nav-item">
+                  <router-link :to="{ name: 'Node' }">Clan War Node</router-link>
                 </li>
                 <!-- <li class="nav-item">
                   <router-link :to="{ name: 'STTK' }">STK & TTK</router-link>

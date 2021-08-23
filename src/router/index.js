@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import STTK from '../components/STTK.vue'
 import Cheatsheet from '../components/Cheatsheet.vue'
+import Node from '../components/CWNode/Node.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/sttk',
     name: 'STTK',
     component: STTK
+  },
+  {
+    path: '/node',
+    name: 'Node',
+    component: Node
   }
 ]
 
