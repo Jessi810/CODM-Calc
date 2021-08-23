@@ -6,6 +6,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    redirect: '/cheatsheet',
     component: Cheatsheet
   },
   {
