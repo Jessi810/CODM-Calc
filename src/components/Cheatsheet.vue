@@ -203,8 +203,12 @@
                     </thead>
                     <tbody>
                         <tr v-for="gun in guns" :key="gun.id" :id="gun.type + gun.id" :name="'rowGun' + gun.type">
-                            <th hidden>{{ gun.id }}</th>
-                            <td>{{ gun.name }}</td>
+                            <td hidden>{{ gun.id }}</td>
+                            <td>
+                                <a href="#" data-mdb-toggle="modal" data-mdb-target="#showStatsModal" @click="showStats(gun.id)">
+                                    {{ gun.name }}
+                                </a>
+                            </td>
                             <td>{{ gun.sttk.ttk[range] }} ms</td>
                             <td>{{ gun.sttk.stk[range] }} {{ gun.sttk.stk[range] < 2 ? 'shot' : 'shots' }}</td>
                         </tr>
@@ -212,6 +216,8 @@
                 </table>
             </div>
         </div>
+
+        <Modal :stats="gunShowStats" />
     </div>
 </template>
 
@@ -219,15 +225,20 @@
 import { ref, onMounted } from 'vue'
 import { gunStats } from '@/gun-stats.js'
 import { Gun } from '@/assets/js/gun.js'
+import Modal from '@/components/Modal.vue'
 import $ from 'jquery'
 
 export default {
+    components: {
+        Modal
+    },
     setup() {
         const hp = ref(100)
         const vest = ref(0)
         const range = ref(0)
         const hitbox = ref('chest')
         const currentSort = ref('id')
+        const gunShowStats = ref({})
 
         const guns = ref([{}])
         
@@ -377,6 +388,10 @@ export default {
             }
         }
 
+        const showStats = (id) => {
+            gunShowStats.value = guns.value.find(g => g.id === id)
+        }
+
         onMounted(() => {
             // $(document).ready(function () {
             //     $('#cheatsheet-table').DataTable({
@@ -395,6 +410,7 @@ export default {
             range,
             hitbox,
             currentSort,
+            gunShowStats,
             hpChanged,
             vestChanged,
             hitboxChanged,
@@ -402,7 +418,8 @@ export default {
             computeSttk,
             parseGunType,
             showOrHideGun,
-            sortColumn
+            sortColumn,
+            showStats
         }
     }
 }
