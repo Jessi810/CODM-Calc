@@ -192,6 +192,7 @@
         <!-- Table -->
         <div class="row justify-content-center my-3">
             <div class="col-sm-10 col-md-8">
+                <i class="bi bi-info-square"></i> Click on gun name to see stats
                 <table class="table table-hover table-bordered table-sm" id="cheatsheet-table">
                     <thead>
                         <tr>
