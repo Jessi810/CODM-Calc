@@ -1,19 +1,20 @@
 <template>
-  <!-- <Navbar /> -->
-  <div id="nav">
+  <Navbar />
+  <!-- <div id="nav">
     <router-link :to="{ name: 'Cheatsheet' }">Cheatsheet</router-link> | 
     <router-link :to="{ name: 'STTK' }">STK & TTK</router-link>
-  </div>
-  <router-view/>
+  </div> -->
+  <router-view />
 </template>
 
 <script>
-// import Navbar from '@/components/Navbar.vue'
-// export default {
-//   components: {
-//     Navbar
-//   }
-// }
+import Navbar from '@/components/Navbar.vue'
+
+export default {
+  components: {
+    Navbar
+  }
+}
 </script>
 
 <style>
