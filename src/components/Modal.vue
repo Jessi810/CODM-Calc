@@ -29,7 +29,15 @@
                 </ul>
             </p>
             <p>
-                <strong>Body Multipliers:</strong> <br>
+              <strong>Fire rate (RPM):</strong> {{ stats.firerate }}
+            </p>
+            <p v-if="'burst' in stats">
+              <strong>Burst Delay:</strong> {{ stats.burst.delay }} ms
+              <br>
+              <strong>Rounds/Burst:</strong> {{ stats.burst.rounds }} shots
+            </p>
+            <p>
+                <strong>Damage Multipliers:</strong> <br>
                 <ul>
                     <li v-for="(value, key) in stats.hitbox" :key="key">
                         {{ key.charAt(0).toUpperCase() + key.slice(1) }}:  {{ value }}x
