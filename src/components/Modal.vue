@@ -44,6 +44,9 @@
                     </li>
                 </ul>
             </p>
+            <p>
+              <strong v-if="'updated' in stats">Updated on {{ stats.updated.desc }} - {{ stats.updated.at.toLocaleString('default', { month: 'long' }) }} {{ stats.updated.at.getDate() }}</strong>
+            </p>
         </div>
         <!-- <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">

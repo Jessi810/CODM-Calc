@@ -7,6 +7,7 @@
                     <h3>Season 7 (2021)</h3>
                     <sup>August 26, 2021</sup>
                     <ul>
+                        <li>Added Hades stats</li>
                         <li>
                             LK24
                             <ul>
