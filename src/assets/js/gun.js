@@ -12,6 +12,8 @@ class Gun
         this.hitbox = gun.hitbox
         if ('burst' in gun)
             this.burst = gun.burst
+        if ('updated' in gun)
+            this.updated = gun.updated
     }
 
     sttk(params)
