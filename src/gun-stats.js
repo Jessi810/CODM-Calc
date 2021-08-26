@@ -93,7 +93,12 @@ const gunStats = [
         range: [23, 38],
         firerate: 633,
         hitbox: {
-            head: 1.2
+            head: 1.2,
+            chest: 1.1
+        },
+        updated: {
+            at: new Date('August 26, 2021'),
+            desc: 'Season 7 (2021)'
         }
     },
     {
@@ -102,7 +107,7 @@ const gunStats = [
         type: 'AR',
         damage: [26, 24, 20, 19],
         range: [16, 26, 36],
-        firerate: 600,
+        firerate: 630,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -166,6 +171,18 @@ const gunStats = [
     // },
     {
         id: 1150,
+        name: 'Peacekeeper MK2',
+        type: 'AR',
+        damage: [26, 24, 19, 18],
+        range: [11, 26, 41],
+        firerate: 652,
+        hitbox: {
+            head: 1.2,
+            chest: 1.1
+        }
+    },
+    {
+        id: 1151,
         name: 'Peacekeeper MK2 (LRB)',
         type: 'AR',
         damage: [26, 24, 19, 18],
@@ -177,14 +194,14 @@ const gunStats = [
         }
     },
     {
-        id: 1151,
+        id: 1152,
         name: 'Peacekeeper MK2 (RFB)',
         type: 'AR',
         damage: [31, 29, 18, 16],
         range: [6, 16, 26],
         firerate: 740,
         hitbox: {
-            head: 1.23,
+            head: 1.2,
             chest: 1.1
         }
     },
@@ -212,7 +229,7 @@ const gunStats = [
             chest: 1.1
         }
     },
-    { // need verification
+    {
         id: 1180,
         name: 'CR-56 AMAX',
         type: 'AR', 
@@ -223,7 +240,7 @@ const gunStats = [
             head: 1.16,
             stomach: 0.84,
             arms: 0.84,
-            legs: 0.79
+            legs: 0.8
         }
     },
     // {
@@ -268,10 +285,44 @@ const gunStats = [
         name: 'Holger 26',
         type: 'LMG',
         damage: [31, 25, 21, 19],
-        range: [17, 25, 51],
+        range: [16, 20, 50],
         firerate: 710,
         hitbox: {
             head: 1.2
+        },
+        updated: {
+            at: new Date('August 26, 2021'),
+            desc: 'Season 7 (2021)'
+        }
+    },
+    {
+        id: 3070,
+        name: 'Hades',
+        type: 'LMG',
+        damage: [29, 22, 19],
+        range: [24, 36],
+        firerate: 650,
+        hitbox: {
+            head: 1.1
+        },
+        updated: {
+            at: new Date('August 26, 2021'),
+            desc: 'Season 7 (2021)'
+        }
+    },
+    {
+        id: 3071,
+        name: 'Hades (RFB)',
+        type: 'LMG',
+        damage: [31, 22, 19],
+        range: [17, 25],
+        firerate: 730,
+        hitbox: {
+            head: 1.1
+        },
+        updated: {
+            at: new Date('August 26, 2021'),
+            desc: 'Season 7 (2021)'
         }
     },
     {
@@ -283,7 +334,12 @@ const gunStats = [
         firerate: 769,
         hitbox: {
             head: 1.1,
+            chest: 1.1,
             legs: 0.9
+        },
+        updated: {
+            at: new Date('August 26, 2021'),
+            desc: 'Season 7 (2021)'
         }
     },
     // {
@@ -303,13 +359,20 @@ const gunStats = [
             legs: 0.9
         }
     },
-    // {
-    //     id: 4040,
-    //     name: 'Razorback',
-    //     type: 'SMG'
-    // },
     {
         id: 4040,
+        name: 'Razorback',
+        type: 'SMG',
+        damage: [30, 23, 19],
+        range: [16, 29],
+        firerate: 630,
+        hitbox: {
+            head: 1.1,
+            legs: 0.9
+        }
+    },
+    {
+        id: 4041,
         name: 'Razorback (RF)',
         type: 'SMG',
         damage: [30, 23, 19],
@@ -369,23 +432,35 @@ const gunStats = [
         name: 'Fennec',
         type: 'SMG',
         damage: [23, 18, 13, 12],
-        range: [16, 21, 28],
+        range: [12, 17, 24],
         firerate: 1110,
         hitbox: {
             head: 1.1,
             chest: 1.1,
+            stomach: 1.05,
             groin: 0.9,
             arms: 0.9,
+            legs: 0.8
+        },
+        updated: {
+            at: new Date('August 26, 2021'),
+            desc: 'Season 7 (2021)'
+        }
+    },
+    {
+        id: 4120,
+        name: 'AGR 556',
+        type: 'SMG',
+        damage: [25, 21, 17, 15],
+        range: [12, 16, 24],
+        firerate: 755,
+        hitbox: {
+            head: 1.05,
             legs: 0.9
         }
     },
-    // {
-    //     id: 4120,
-    //     name: 'AGR 556',
-    //     type: 'SMG',
-    // },
     {
-        id: 4120,
+        id: 4121,
         name: 'AGR 556 (5.56)',
         type: 'SMG',
         damage: [27, 23, 20, 18],
