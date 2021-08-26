@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import STTK from '../components/STTK.vue'
 import Cheatsheet from '../components/Cheatsheet.vue'
+import Changelog from '../components/Changelog.vue'
 import Node from '../components/CWNode/Node.vue'
 
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
     path: '/node',
     name: 'Node',
     component: Node
+  },
+  {
+    path: '/changelog',
+    name: 'Changelog',
+    component: Changelog
   }
 ]
 

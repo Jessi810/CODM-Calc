@@ -35,6 +35,10 @@
                 <li class="nav-item">
                   <router-link :to="{ name: 'Node' }">Clan War Node</router-link>
                 </li>
+                <span class="d-none d-lg-block">&nbsp;|&nbsp;</span>
+                <li class="nav-item">
+                  <router-link :to="{ name: 'Changelog' }">Changelog</router-link>
+                </li>
                 <!-- <li class="nav-item">
                   <router-link :to="{ name: 'STTK' }">STK & TTK</router-link>
                 </li> -->
