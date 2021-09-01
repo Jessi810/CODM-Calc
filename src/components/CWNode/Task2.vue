@@ -9,15 +9,15 @@
     type="range"
     class="form-control w-75"
     step="1"
-    min="0"
-    max="100"
+    min="1"
+    max="300"
     v-model="points"
     @input="computePoints" />
     <input
     type="number"
     class="form-control w-25"
-    min="0"
-    max="100"
+    min="1"
+    max="300"
     v-model="points"
     @change="computePoints" />
 </div>
