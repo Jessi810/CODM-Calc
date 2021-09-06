@@ -192,7 +192,29 @@
         <!-- Table -->
         <div class="row justify-content-center my-3">
             <div class="col-sm-10 col-md-8">
+
                 <i class="bi bi-info-square"></i> Click on gun name to see stats
+
+                <br>
+
+                <strong>Preset:&nbsp;&nbsp;&nbsp;</strong>
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" id="preset_mp1" name="preset" @change="presetChanged('MP')" checked>
+                    <label for="preset_mp1" class="form-check-label">MP</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" id="preset_mp2" name="preset" @change="presetChanged('MP_Hardcore')">
+                    <label for="preset_mp2" class="form-check-label">MP Hardcore</label>
+                </div>
+                <!-- <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" id="preset3" name="preset" @change="presetChanged('BR_100hp_lv3')">
+                    <label for="preset3" class="form-check-label">BR 100HP + Lv.3 Vest</label>
+                </div> -->
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" id="preset4" name="preset" @change="presetChanged('BR_150hp_lv3')">
+                    <label for="preset4" class="form-check-label">BR Adrenaline + Lv.3 Vest</label>
+                </div>
+                
                 <table class="table table-hover table-bordered table-sm" id="cheatsheet-table">
                     <thead>
                         <tr>
@@ -393,6 +415,34 @@ export default {
             gunShowStats.value = guns.value.find(g => g.id === id)
         }
 
+        const presetChanged = (value) => {
+            switch (value) {
+                case 'MP':
+                    hp.value = 100
+                    vest.value = 0
+                    break
+                case 'MP_Hardcore':
+                    hp.value = 30
+                    vest.value = 0
+                    break
+                case 'BR_100hp_lv3':
+                    hp.value = 100
+                    vest.value = 45
+                    break
+                case 'BR_150hp_lv3':
+                    hp.value = 150
+                    vest.value = 45
+                    break
+                default:
+                    hp.value = 100
+                    vest.value = 0
+                    range.value = 0
+                    hitbox.value = 'chest'
+            }
+
+            computeSttk()
+        }
+
         onMounted(() => {
             // $(document).ready(function () {
             //     $('#cheatsheet-table').DataTable({
@@ -420,7 +470,8 @@ export default {
             parseGunType,
             showOrHideGun,
             sortColumn,
-            showStats
+            showStats,
+            presetChanged
         }
     }
 }
