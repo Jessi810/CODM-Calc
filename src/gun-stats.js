@@ -48,7 +48,18 @@ const gunStats = [
         range: [20, 30, 55],
         firerate: 550,
         hitbox: {
-            head: 1.16
+            head: 1.2
+        }
+    },
+    {
+        id: 1041,
+        name: 'AK-47 (5.45)',
+        type: 'AR',
+        damage: [25, 21, 16, 15],
+        range: [14, 24, 35],
+        firerate: 750,
+        hitbox: {
+            head: 1.2
         }
     },
     {
@@ -113,11 +124,17 @@ const gunStats = [
             chest: 1.1
         }
     },
-    // {
-    //     id: 1100,
-    //     name: 'Man-O-War',
-    //     type: 'AR'
-    // },
+    {
+        id: 1100,
+        name: 'Man-O-War',
+        type: 'AR',
+        damage: [37, 30, 24],
+        range: [23, 43],
+        firerate: 500,
+        hitbox: {
+            head: 1.1
+        }
+    },
     {
         id: 1110,
         name: 'KN-44',
@@ -164,11 +181,29 @@ const gunStats = [
             legs: 0.8
         }
     },
-    // {
-    //     id: 1140,
-    //     name: 'DR-H',
-    //     type: 'AR'
-    // },
+    {
+        id: 1140,
+        name: 'DR-H',
+        type: 'AR',
+        damage: [32, 31, 25, 24, 19],
+        range: [14, 17, 25, 35],
+        firerate: 570,
+        hitbox: {
+            head: 1.2
+        }
+    },
+    {
+        id: 1141,
+        name: 'DR-H (OTM)',
+        type: 'AR',
+        damage: [32, 31, 25, 24, 19],
+        range: [14, 17, 25, 35],
+        firerate: 570,
+        hitbox: {
+            head: 1.2,
+            chest: 1.2
+        }
+    },
     {
         id: 1150,
         name: 'Peacekeeper MK2',
@@ -233,26 +268,54 @@ const gunStats = [
         id: 1180,
         name: 'CR-56 AMAX',
         type: 'AR', 
-        damage: [32, 31, 26, 20],
+        damage: [25, 24, 20, 16],
         range: [13, 18, 26],
         firerate: 710,
         hitbox: {
-            head: 1.16,
-            stomach: 0.84,
-            arms: 0.84,
-            legs: 0.8
+            head: 1.5,
+            chest: 1.3,
+            stomach: 1.1,
+            arms: {
+                upper: 1.1
+            }
         }
     },
-    // {
-    //     id: 3010,
-    //     name: 'S36',
-    //     type: 'LMG'
-    // },
-    // {
-    //     id: 3020,
-    //     name: 'UL736',
-    //     type: 'LMG'
-    // },
+    {
+        id: 1181,
+        name: 'CR-56 AMAX (M67)',
+        type: 'AR', 
+        damage: [48, 24, 20, 16],
+        range: [26, 36, 52],
+        firerate: 280,
+        hitbox: {
+            head: 2.1,
+            chest: 1.3,
+            stomach: 1.1,
+            arms: 1.3
+        }
+    },
+    {
+        id: 3010,
+        name: 'S36',
+        type: 'LMG',
+        damage: [30, 23, 18],
+        range: [16, 38],
+        firerate: 750,
+        hitbox: {
+
+        }
+    },
+    {
+        id: 3020,
+        name: 'UL736',
+        type: 'LMG',
+        damage: [25, 22, 20, 18],
+        range: [26, 36, 56],
+        firerate: 620,
+        hitbox: {
+            head: 1.2
+        }
+    },
     {
         id: 3030,
         name: 'RPD',
@@ -275,11 +338,17 @@ const gunStats = [
             head: 1.1
         }
     },
-    // {
-    //     id: 3050,
-    //     name: 'Chopper',
-    //     type: 'LMG'
-    // },
+    {
+        id: 3050,
+        name: 'Chopper',
+        type: 'LMG',
+        damage: [25, 21, 17],
+        range: [10, 36],
+        firerate: 750,
+        hitbox: {
+            head: 1.2
+        }
+    },
     {
         id: 3060,
         name: 'Holger 26',
@@ -395,33 +464,67 @@ const gunStats = [
             legs: 0.9
         }
     },
-    // {
-    //     id: 4060,
-    //     name: 'HG 40',
-    //     type: 'SMG'
-    // },
+    {
+        id: 4060,
+        name: 'HG 40',
+        type: 'SMG',
+        damage: [26, 24, 20, 17],
+        range: [10, 16, 25],
+        firerate: 670,
+        hitbox: {
+            head: 1.2,
+            chest: 1.1,
+            legs: 0.9
+        }
+    },
     // {
     //     id: 4070,
     //     name: 'Pharo',
     //     type: 'SMG'
     // },
-    // {
-    //     id: 4080,
-    //     name: 'GKS',
-    //     type: 'SMG'
-    // },
-    // {
-    //     id: 4090,
-    //     name: 'Cordite',
-    //     type: 'SMG'
-    // },
+    {
+        id: 4080,
+        name: 'GKS',
+        type: 'SMG',
+        damage: [28, 24, 19],
+        range: [20, 30],
+        firerate: 600,
+        hitbox: {
+            head: 1.3,
+            chest: 1.1
+        }
+    },
+    {
+        id: 4090,
+        name: 'Cordite',
+        type: 'SMG',
+        damage: [24, 22, 19, 18, 16],
+        range: [8, 19, 26, 33],
+        firerate: 800,
+        hitbox: {
+            head: 1.2,
+            legs: 0.9
+        }
+    },
     {
         id: 4100,
         name: 'QQ9',
         type: 'SMG',
         damage: [25, 23, 17, 15],
         range: [11, 16, 21],
-        firerate: 850,
+        firerate: 830,
+        hitbox: {
+            head: 1.1,
+            legs: 0.9
+        }
+    },
+    {
+        id: 4101,
+        name: 'QQ9 (10mm)',
+        type: 'SMG',
+        damage: [26, 23, 17, 15],
+        range: [12, 18, 24],
+        firerate: 810,
         hitbox: {
             head: 1.1,
             legs: 0.9
@@ -563,6 +666,20 @@ const gunStats = [
             head: 2,
             chest: 1.6,
             arms: 1.6,
+        }
+    },
+    {
+        id: 7050,
+        name: 'Crossbow',
+        type: 'HG',
+        damage: [80],
+        range: [],
+        firerate: 25.5,
+        hitbox: {
+            head: 2,
+            chest: 1.5,
+            stomach: 1.3,
+            arms: 1.5
         }
     }
 ]
