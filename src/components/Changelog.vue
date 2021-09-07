@@ -14,10 +14,17 @@
                         <li>Added CR-56 (M67) stats</li>
                         <li>Added S36 stats</li>
                         <li>Added UL736 stats</li>
+                        <li>Added Chicom stats</li>
                         <li>Added HG 40 stats</li>
+                        <li>Added Pharo stats</li>
                         <li>Added GKS stats</li>
+                        <li>Added MX9 (LC) stats</li>
                         <li>Added Cordite stats</li>
                         <li>Added QQ9 (10mm) stats</li>
+                        <li>Added J358 stats</li>
+                        <li>Added MW11 stats</li>
+                        <li>Added .50 GS stats</li>
+                        <li>Fixed HVK-30 damage and hitbox stats</li>
                         <li>Fixed CR-56 AMAX damage and hitbox stats</li>
                     </ul>
                 </div>
