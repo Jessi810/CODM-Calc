@@ -339,7 +339,7 @@ export default {
                 let result
 
                 if (property === 'ttk' || property === 'stk')
-                    result = (a.sttk[property] < b.sttk[property]) ? -1 : (a.sttk[property] > b.sttk[property]) ? 1 : 0
+                    result = (a.sttk[property][range.value] < b.sttk[property][range.value]) ? -1 : (a.sttk[property][range.value] > b.sttk[property][range.value]) ? 1 : 0
                 else
                     result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
 
