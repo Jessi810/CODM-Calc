@@ -309,6 +309,8 @@ export default {
                     hitbox: hitbox.value
                 })
             }
+
+            guns.value.sort(sortByKey(currentSort.value))
         }
 
         const sortColumn = (s) => {
