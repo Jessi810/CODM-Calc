@@ -117,7 +117,7 @@
                                                 Select all AR
                                             </label>
                                         </div>
-                                        <div v-for="gun in guns" :key="gun.id">
+                                        <div v-for="gun in gunStats" :key="gun.id">
                                             <div class="form-check" v-if="gun.type === 'AR'">
                                                 <label class="form-check-label">
                                                     <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideAR" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllAR')" checked>
@@ -134,7 +134,7 @@
                                                 Select all SMG
                                             </label>
                                         </div>
-                                        <div v-for="gun in guns" :key="gun.id">
+                                        <div v-for="gun in gunStats" :key="gun.id">
                                             <div class="form-check" v-if="gun.type === 'SMG'">
                                                 <label class="form-check-label">
                                                     <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideSMG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllSMG')" checked>
@@ -151,7 +151,7 @@
                                                 Select all HG
                                             </label>
                                         </div>
-                                        <div v-for="gun in guns" :key="gun.id">
+                                        <div v-for="gun in gunStats" :key="gun.id">
                                             <div class="form-check" v-if="gun.type === 'HG'">
                                                 <label class="form-check-label">
                                                     <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideHG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllHG')" checked>
@@ -168,7 +168,7 @@
                                                 Select all LMG
                                             </label>
                                         </div>
-                                        <div v-for="gun in guns" :key="gun.id">
+                                        <div v-for="gun in gunStats" :key="gun.id">
                                             <div class="form-check" v-if="gun.type === 'LMG'">
                                                 <label class="form-check-label">
                                                     <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideLMG" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllLMG')" checked>
@@ -200,11 +200,6 @@
         <!-- Table -->
         <div class="row justify-content-center my-3">
             <div class="col-sm-10 col-md-8">
-
-                <i class="bi bi-info-square"></i> Click on gun name to see stats
-
-                <br>
-
                 <strong>Preset:&nbsp;&nbsp;&nbsp;</strong>
                 <div class="form-check-inline">
                     <input type="radio" class="form-check-input" id="preset_mp1" name="preset" @change="presetChanged('MP')" checked>
@@ -245,6 +240,10 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <i class="bi bi-info-square"></i> Click on gun name to see stats
+                <br>
+                <i class="bi bi-info-square"></i> Click on table header to sort
             </div>
         </div>
 
@@ -482,6 +481,7 @@ export default {
             hitbox,
             currentSort,
             gunShowStats,
+            gunStats,
             hpChanged,
             vestChanged,
             hitboxChanged,
