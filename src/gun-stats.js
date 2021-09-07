@@ -173,12 +173,16 @@ const gunStats = [
         id: 1131,
         name: 'HVK-30 (LC)',
         type: 'AR', 
-        damage: [35, 24, 19],
+        damage: [27, 24, 17],
         range: [5, 26],
         firerate: 711,
         hitbox: {
-            head: 1.6,
-            legs: 0.8
+            head: 2,
+            chest: 1.3,
+            stomach: 1.3,
+            arms: {
+                lower: 1.3
+            }
         }
     },
     {
@@ -411,11 +415,24 @@ const gunStats = [
             desc: 'Season 7 (2021)'
         }
     },
-    // {
-    //     id: 4020,
-    //     name: 'Chicom',
-    //     type: 'SMG'
-    // },
+    {
+        id: 4020,
+        name: 'Chicom',
+        type: 'SMG',
+        damage: [27, 24, 20, 17],
+        range: [9, 16, 21],
+        firerate: 788,
+        burst: {
+            rounds: 3,
+            delay: 150
+        },
+        hitbox: {
+            head: 1.4,
+            chest: 1.3,
+            groin: 0.9,
+            legs: 0.9
+        }
+    },
     {
         id: 4030,
         name: 'PDW-57',
@@ -477,11 +494,22 @@ const gunStats = [
             legs: 0.9
         }
     },
-    // {
-    //     id: 4070,
-    //     name: 'Pharo',
-    //     type: 'SMG'
-    // },
+    {
+        id: 4070,
+        name: 'Pharo',
+        type: 'SMG',
+        damage: [34, 26, 21, 19, 16],
+        range: [12, 19, 24, 30],
+        firerate: 790,
+        burst: {
+            rounds: 4,
+            delay: 155
+        },
+        hitbox: {
+            head: 1.1,
+            legs: 0.9
+        }
+    },
     {
         id: 4080,
         name: 'GKS',
@@ -633,24 +661,56 @@ const gunStats = [
         firerate: 850,
         hitbox: {
             head: 1.1,
+            groin: 0.9,
+            legs: 0.7
+        }
+    },
+    {
+        id: 4151,
+        name: 'MX9 (LC)',
+        type: 'SMG',
+        damage: [30, 24, 16, 15],
+        range: [12, 16, 21],
+        firerate: 850,
+        hitbox: {
+            head: 1.4,
+            chest: 1.15,
             legs: 0.9
         }
     },
-    // {
-    //     id: 7010,
-    //     name: 'J358',
-    //     type: 'HG'
-    // },
-    // {
-    //     id: 7020,
-    //     name: 'MW11',
-    //     type: 'HG'
-    // },
-    // {
-    //     id: 7030,
-    //     name: '.50 GS',
-    //     type: 'HG'
-    // },
+    {
+        id: 7010,
+        name: 'J358',
+        type: 'HG',
+        damage: [60, 40, 34, 25],
+        range: [19, 21, 35],
+        firerate: 380,
+        hitbox: {
+            head: 1.5
+        }
+    },
+    {
+        id: 7020,
+        name: 'MW11',
+        type: 'HG',
+        damage: [26, 20, 17, 16],
+        range: [21, 25, 28],
+        firerate: 440,
+        hitbox: {
+            head: 1.4
+        }
+    },
+    {
+        id: 7030,
+        name: '.50 GS',
+        type: 'HG',
+        damage: [70, 55, 48],
+        range: [11, 26],
+        firerate: 330,
+        hitbox: {
+            head: 1.5
+        }
+    },
     {
         id: 7040,
         name: 'Renetti',
