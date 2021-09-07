@@ -1,21 +1,21 @@
-# codm-calculator
+# CODM Calculator
 
-Hosted on [Netlify](https://codm-calc.netlify.app/)
+### Hosted on [Netlify](https://codm-calc.netlify.app/)
 
-## Project setup
+Web app for anything calculation-related stuff on Call of Duty: Mobile game.
+
+Features:
+- TTK and STK calculator
+- Clan war node calculator
+
+### Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles project
 ```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
+or
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
