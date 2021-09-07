@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <!-- HP and Vest -->
+        <!-- HP, Vest, Show/Hide -->
         <div class="row justify-content-center my-3">
             <div class="col-sm-10 col-md-8">
                 <div class="accordion" id="accordionExample">
@@ -101,6 +101,14 @@
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-mdb-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" id="cbSelectAll" @click="showOrHideGun('All', $event)" checked>
+                                                Select/unselect all guns
+                                            </label>
+                                        </div>
+                                    </div>
                                     <div class="col-6">
                                         <strong>Assault Rifles:</strong>
                                         <div class="form-check">
@@ -355,7 +363,7 @@ export default {
         }
 
         const showOrHideGun = (id, event, idSelectAll) => {
-            if (id === 'AR' || id === 'SMG' || id === 'LMG' || id === 'HG') {
+            if (id === 'AR' || id === 'SMG' || id === 'LMG' || id === 'HG' || id === 'All') {
                 let checkboxes, rowGuns
 
                 switch (id) {
@@ -374,6 +382,16 @@ export default {
                     case 'HG':
                         checkboxes = document.getElementsByName('cbShowHideHG')
                         rowGuns = document.getElementsByName('rowGunHG')
+                        break
+                    case 'All':
+                        checkboxes = document.querySelectorAll('[name="cbShowHideAR"], [name="cbShowHideSMG"], [name="cbShowHideLMG"], [name="cbShowHideHG"]')
+                        rowGuns = document.querySelectorAll('[name="rowGunAR"], [name="rowGunSMG"], [name="rowGunLMG"], [name="rowGunHG"]')
+
+                        document.getElementById('cbSelectAllAR').checked = event.target.checked
+                        document.getElementById('cbSelectAllSMG').checked = event.target.checked
+                        document.getElementById('cbSelectAllLMG').checked = event.target.checked
+                        document.getElementById('cbSelectAllHG').checked = event.target.checked
+
                         break
                 }
 

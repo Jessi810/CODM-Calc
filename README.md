@@ -1,5 +1,7 @@
 # codm-calculator
 
+Hosted on [Netlify](https://codm-calc.netlify.app/)
+
 ## Project setup
 ```
 npm install
