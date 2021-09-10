@@ -222,7 +222,43 @@ const gunStats = [
     },
     {
         id: 1151,
-        name: 'Peacekeeper MK2 (LRB)',
+        name: 'Peacekeeper MK2 (Rapid Fire)',
+        type: 'AR',
+        damage: [31, 29, 18, 16],
+        range: [6, 16, 26],
+        firerate: 740,
+        hitbox: {
+            head: 1.2,
+            chest: 1.1
+        }
+    },
+    {
+        id: 1152,
+        name: 'Peacekeeper MK2 (Well-Forged)',
+        type: 'AR',
+        damage: [26, 24, 19, 18],
+        range: [16, 39, 61],
+        firerate: 652,
+        hitbox: {
+            head: 1.2,
+            chest: 1.1
+        }
+    },
+    {
+        id: 1153,
+        name: 'Peacekeeper MK2 (Taskforce)',
+        type: 'AR',
+        damage: [26, 24, 19, 18],
+        range: [16, 39, 61],
+        firerate: 711,
+        hitbox: {
+            head: 1.2,
+            chest: 1.1
+        }
+    },
+    {
+        id: 1154,
+        name: 'Peacekeeper MK2 (Long-Range)',
         type: 'AR',
         damage: [26, 24, 19, 18],
         range: [22, 52, 82],
@@ -233,12 +269,12 @@ const gunStats = [
         }
     },
     {
-        id: 1152,
-        name: 'Peacekeeper MK2 (RFB)',
+        id: 1155,
+        name: 'Peacekeeper MK2 (Integral Suppressor)',
         type: 'AR',
-        damage: [31, 29, 18, 16],
-        range: [6, 16, 26],
-        firerate: 740,
+        damage: [26, 24, 19, 18],
+        range: [13, 32, 51],
+        firerate: 652,
         hitbox: {
             head: 1.2,
             chest: 1.1
