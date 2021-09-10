@@ -205,9 +205,13 @@
                     <input type="radio" class="form-check-input" id="preset_mp1" name="preset" @change="presetChanged('MP')" checked>
                     <label for="preset_mp1" class="form-check-label">MP</label>
                 </div>
-                <div class="form-check-inline">
+                <!-- <div class="form-check-inline">
                     <input type="radio" class="form-check-input" id="preset_mp2" name="preset" @change="presetChanged('MP_Hardcore')">
                     <label for="preset_mp2" class="form-check-label">MP Hardcore</label>
+                </div> -->
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" id="preset_mp3" name="preset" @change="presetChanged('MP_Payout_lv2')">
+                    <label for="preset_mp3" class="form-check-label">Payout + Lv.2 Vest</label>
                 </div>
                 <!-- <div class="form-check-inline">
                     <input type="radio" class="form-check-input" id="preset3" name="preset" @change="presetChanged('BR_100hp_lv3')">
@@ -442,6 +446,10 @@ export default {
                     break
                 case 'MP_Hardcore':
                     hp.value = 30
+                    vest.value = 0
+                    break
+                case 'MP_Payout_lv2':
+                    hp.value = 150
                     vest.value = 0
                     break
                 case 'BR_100hp_lv3':
