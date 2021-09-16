@@ -7,7 +7,7 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Options ({{ hp }} HP,  {{ vest }}% dmg reduction,  {{ hitbox }} shots)
+                                Options ({{ hp }} HP, {{ hitbox }} shots)
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-mdb-parent="#accordionExample">
@@ -15,42 +15,34 @@
                                 
                                 <!-- HP and Vest -->
                                 <div class="row mb-3 justify-content-center">
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6">
                                         <strong>Target HP</strong>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input" id="hp30" v-model="hp" @change="hpChanged" value="30">
-                                            <label for="hp30" class="form-check-label">30 HP</label>
+                                            <label for="hp30" class="form-check-label">30 HP (Hardcore)</label>
                                         </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input" id="hp100" v-model="hp" @change="hpChanged" value="100">
-                                            <label for="hp100" class="form-check-label">100 HP</label>
+                                            <label for="hp100" class="form-check-label">100 HP (MP / No Plate)</label>
                                         </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input" id="hp150" v-model="hp" @change="hpChanged" value="150">
-                                            <label for="hp150" class="form-check-label">150 HP</label>
+                                            <label for="hp150" class="form-check-label">150 HP (1 Plate)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <strong class="d-none d-sm-block">&nbsp;</strong>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" id="hp200" v-model="hp" @change="hpChanged" value="200">
+                                            <label for="hp200" class="form-check-label">200 HP (2 Plates)</label>
                                         </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input" id="hp250" v-model="hp" @change="hpChanged" value="250">
-                                            <label for="hp250" class="form-check-label">250 HP</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <strong>Target Vest</strong>
-                                        <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="vest0" v-model="vest" @change="vestChanged" value="0">
-                                            <label for="vest0" class="form-check-label">No Vest</label>
+                                            <label for="hp250" class="form-check-label">250 HP (3 Plates)</label>
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="vest25" v-model="vest" @change="vestChanged" value="25">
-                                            <label for="vest25" class="form-check-label">Lv 1</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="vest35" v-model="vest" @change="vestChanged" value="35">
-                                            <label for="vest35" class="form-check-label">Lv 2</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="vest45" v-model="vest" @change="vestChanged" value="45">
-                                            <label for="vest45" class="form-check-label">Lv 3</label>
+                                            <input type="radio" class="form-check-input" id="hp300" v-model="hp" @change="hpChanged" value="300">
+                                            <label for="hp300" class="form-check-label">300 HP (Kinetic Plate)</label>
                                         </div>
                                     </div>
                                 </div>
@@ -188,11 +180,15 @@
         <!-- Range -->
         <div class="row justify-content-center my-3">
             <div class="col-sm-10 col-md-8">
-                <strong>Range to target</strong>
+                <strong>
+                    Range to target
+                    <span class="d-inline d-sm-none"> (in meters)</span>
+                </strong>
+
                 <div class="input-group">
                     <input type="range" class="form-control w-50" style="height: auto;" id="range-slider" v-model="range" @input="rangeChanged" min="0" max="100" step="1">
                     <input type="number" class="form-control w-25" id="range-number" style="max-width: 100px;" v-model="range" @input="rangeChanged" min="0" max="100">
-                    <span class="input-group-text">meters</span>
+                    <span class="input-group-text d-none d-sm-block">meters</span>
                 </div>
             </div>
         </div>
@@ -200,27 +196,15 @@
         <!-- Table -->
         <div class="row justify-content-center my-3">
             <div class="col-sm-10 col-md-8">
+
                 <strong>Preset:&nbsp;&nbsp;&nbsp;</strong>
-                <div class="form-check-inline">
-                    <input type="radio" class="form-check-input" id="preset_mp1" name="preset" @change="presetChanged('MP')" checked>
-                    <label for="preset_mp1" class="form-check-label">MP</label>
-                </div>
-                <!-- <div class="form-check-inline">
-                    <input type="radio" class="form-check-input" id="preset_mp2" name="preset" @change="presetChanged('MP_Hardcore')">
-                    <label for="preset_mp2" class="form-check-label">MP Hardcore</label>
-                </div> -->
-                <div class="form-check-inline">
-                    <input type="radio" class="form-check-input" id="preset_mp3" name="preset" @change="presetChanged('MP_Payout_lv2')">
-                    <label for="preset_mp3" class="form-check-label">Payout + Lv.2 Vest</label>
-                </div>
-                <!-- <div class="form-check-inline">
-                    <input type="radio" class="form-check-input" id="preset3" name="preset" @change="presetChanged('BR_100hp_lv3')">
-                    <label for="preset3" class="form-check-label">BR 100HP + Lv.3 Vest</label>
-                </div> -->
-                <div class="form-check-inline">
-                    <input type="radio" class="form-check-input" id="preset4" name="preset" @change="presetChanged('BR_150hp_lv3')">
-                    <label for="preset4" class="form-check-label">BR Adrenaline + Lv.3 Vest</label>
-                </div>
+                <select class="form-select" @change="presetChanged($event.target.value)">
+                    <option value="MP_DEFAULT">MP / BR (No Plate)</option>
+                    <option value="MP_PAYOUT_VEST25">Payout with 25HP Vest</option>
+                    <option value="MP_PAYOUT_VEST50">Payout with 50HP Vest</option>
+                    <option value="BR_3PLATE">BR with 3 Armor Plates</option>
+                    <option value="BR_4PLATE">BR with Kinetic Plate</option>
+                </select>
                 
                 <table class="table table-hover table-bordered table-sm" id="cheatsheet-table">
                     <thead>
@@ -440,25 +424,20 @@ export default {
 
         const presetChanged = (value) => {
             switch (value) {
-                case 'MP':
+                case 'MP_DEFAULT':
                     hp.value = 100
-                    vest.value = 0
                     break
-                case 'MP_Hardcore':
-                    hp.value = 30
-                    vest.value = 0
+                case 'MP_PAYOUT_VEST25':
+                    hp.value = 125
                     break
-                case 'MP_Payout_lv2':
+                case 'MP_PAYOUT_VEST50':
                     hp.value = 150
-                    vest.value = 0
                     break
-                case 'BR_100hp_lv3':
-                    hp.value = 100
-                    vest.value = 45
+                case 'BR_3PLATE':
+                    hp.value = 250
                     break
-                case 'BR_150hp_lv3':
-                    hp.value = 150
-                    vest.value = 45
+                case 'BR_4PLATE':
+                    hp.value = 300
                     break
                 default:
                     hp.value = 100
