@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-center my-3">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-9">
 
                 <h3>Season 7 (2021)</h3>
 

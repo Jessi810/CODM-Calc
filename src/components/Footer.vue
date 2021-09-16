@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-sm-10 col-md-8">
+            <div class="col-12 col-lg-9">
 
                 <hr>
 

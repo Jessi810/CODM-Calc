@@ -1,8 +1,9 @@
 <template>
     <div class="container">
-        <!-- HP, Vest, Show/Hide -->
         <div class="row justify-content-center my-3">
-            <div class="col-sm-10 col-md-8">
+
+            <!-- HP and Show/Hide Guns -->
+            <div class="col-12 col-lg-9 my-1">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
@@ -14,7 +15,7 @@
                             <div class="accordion-body">
                                 
                                 <!-- HP and Vest -->
-                                <div class="row mb-3 justify-content-center">
+                                <div class="row justify-content-center mb-3">
                                     <div class="col-12 col-sm-6">
                                         <strong>Target HP</strong>
                                         <div class="form-check">
@@ -175,11 +176,9 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Range -->
-        <div class="row justify-content-center my-3">
-            <div class="col-sm-10 col-md-8">
+            <!-- Range -->
+            <div class="col-12 col-lg-9 my-1">
                 <strong>
                     Range to target
                     <span class="d-inline d-sm-none"> (in meters)</span>
@@ -191,11 +190,9 @@
                     <span class="input-group-text d-none d-sm-block">meters</span>
                 </div>
             </div>
-        </div>
-
-        <!-- Table -->
-        <div class="row justify-content-center my-3">
-            <div class="col-sm-10 col-md-8">
+            
+            <!-- Table -->
+            <div class="col-12 col-lg-9 my-1">
 
                 <strong>Preset:&nbsp;&nbsp;&nbsp;</strong>
                 <select class="form-select" @change="presetChanged($event.target.value)">
@@ -233,9 +230,10 @@
                 <br>
                 <i class="bi bi-info-square"></i> Click on table header to sort
             </div>
-        </div>
 
-        <Modal :stats="gunShowStats" />
+            <Modal :stats="gunShowStats" />
+
+        </div>
     </div>
 </template>
 

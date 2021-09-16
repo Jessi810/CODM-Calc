@@ -6,51 +6,53 @@
 <label for="inputGroupPoints">Points for each kill/capture/etc.</label>
 <div id="inputGroupPoints" class="input-group mb-3">
     <input
-    type="range"
-    class="form-control w-75"
-    step="1"
-    min="1"
-    max="300"
-    v-model="points"
-    @input="computePoints" />
+        type="range"
+        class="form-control w-75"
+        step="1"
+        min="1"
+        max="300"
+        v-model="points"
+        @input="computePoints" />
+    
     <input
-    type="number"
-    class="form-control w-25"
-    min="1"
-    max="300"
-    v-model="points"
-    @change="computePoints" />
+        type="number"
+        class="form-control w-25"
+        min="1"
+        max="300"
+        v-model="points"
+        @change="computePoints" />
 </div>
 
 <label for="inputGroupCounts">Number of kill/capture/etc.</label>
 <div id="inputGroupCounts" class="input-group mb-3">
     <input
-    type="range"
-    class="form-control w-75"
-    step="1"
-    min="1"
-    max="1000"
-    v-model="counts"
-    @input="computePoints" />
+        type="range"
+        class="form-control w-75"
+        step="1"
+        min="1"
+        max="1000"
+        v-model="counts"
+        @input="computePoints" />
+
     <input
-    type="number"
-    class="form-control w-25"
-    min="1"
-    max="1000"
-    v-model="counts"
-    @change="computePoints" />
+        type="number"
+        class="form-control w-25"
+        min="1"
+        max="1000"
+        v-model="counts"
+        @change="computePoints" />
 </div>
 
 <div class="form-check">
     <label class="form-check-label">
     <input type="checkbox" class="form-check-input" id="teamBonus" value="30" v-model="bonus[0]" @change="computePoints">
-    Prematch Team Bonus (+30%)
+        Prematch Team Bonus (+30%)
     </label>
 </div>
 <div class="form-check">
     <label class="form-check-label">
     <input type="checkbox" class="form-check-input" id="bpBonus" value="20" v-model="bonus[1]" @change="computePoints">
-    Battle Pass Bonus (+20%)
+        Battle Pass Bonus (+20%)
     </label>
 </div>
 <div class="form-check">
@@ -62,7 +64,7 @@
 <div class="form-check">
     <label class="form-check-label">
     <input type="checkbox" class="form-check-input" id="dailyBonus" value="200" v-model="bonus[3]" @change="computePoints">
-    Daily Bonus (+200%)
+        Daily Bonus (+200%)
     </label>
 </div>
 
