@@ -3,8 +3,33 @@
         <div class="row justify-content-center my-3">
             <div class="col-12 col-lg-9">
 
-                <h3>Season 7 (2021)</h3>
+                <h3>Season 8 (2021)</h3>
+                <div>
+                    <sup>September 23, 2021</sup>
+                    <ul>
+                        <li>
+                            <strong>NEW: </strong>
+                            Battle Royale HP System (no more vests)
+                        </li>
+                        <li>Added M13 stats</li>
+                        <li>
+                            PDW-57
+                            <ul>
+                                <li>Changed head multiplier from 1.1 to 1.2</li>
+                                <li>Added x1.1 arms multipler</li>
+                            </ul>
+                        </li>
+                        <li>
+                            HG 40
+                            <ul>
+                                <li>Added x1.1 chest multipler</li>
+                                <li>Changed legs multiplier from 0.9 to 0.95</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
 
+                <h3>Season 7 (2021)</h3>
                 <div>
                     <sup>September 7, 2021</sup>
                     <ul>
