@@ -304,6 +304,16 @@ const gunStats = [
             chest: 1.1
         }
     },
+    // {
+    //     id: 1171,
+    //     name: 'AS VAL (FMJ)',
+    //     type: 'AR', 
+    //     damage: [48, 44, 35, 30],
+    //     range: [25, 38, 75],
+    //     firerate: 800,
+    //     hitbox: {
+    //     }
+    // },
     {
         id: 1180,
         name: 'CR-56 AMAX',
@@ -334,6 +344,28 @@ const gunStats = [
             arms: 1.3
         }
     },
+    {
+        id: 1190,
+        name: 'M13',
+        type: 'AR', 
+        damage: [24, 18, 16],
+        range: [26, 41],
+        firerate: 880,
+        hitbox: {
+            head: 1.5,
+            chest: 1.1
+        }
+    },
+    // {
+    //     id: 2010,
+    //     name: 'M21 EBR',
+    //     type: 'SR',
+    //     damage: [91, 71],
+    //     range: [65],
+    //     firerate: 350,
+    //     hitbox: {
+    //     }
+    // },
     {
         id: 3010,
         name: 'S36',
@@ -477,8 +509,13 @@ const gunStats = [
         range: [6, 15, 28],
         firerate: 745,
         hitbox: {
-            head: 1.1,
+            head: 1.2,
+            chest: 1.1,
             legs: 0.9
+        },
+        updated: {
+            at: new Date('September 21, 2021'),
+            desc: 'Season 8 (2021)'
         }
     },
     {
@@ -527,7 +564,12 @@ const gunStats = [
         hitbox: {
             head: 1.2,
             chest: 1.1,
-            legs: 0.9
+            arms: 1.1,
+            legs: 0.95
+        },
+        updated: {
+            at: new Date('September 21, 2021'),
+            desc: 'Season 8 (2021)'
         }
     },
     {
