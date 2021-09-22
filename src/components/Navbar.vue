@@ -37,6 +37,12 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'Changelog' }">Changelog</router-link>
                                 </li>
+
+                                <span class="d-none d-lg-block">&nbsp;|&nbsp;</span>
+
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'Credits' }">Credits</router-link>
+                                </li>
                                 
                             </ul>
                         </div>
