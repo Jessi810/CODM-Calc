@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import STTK from '../components/STTK.vue'
-import Cheatsheet from '../components/Cheatsheet.vue'
 import Changelog from '../components/Changelog.vue'
+import Cheatsheet from '../components/Cheatsheet.vue'
+import Credits from '../components/Credits.vue'
 import Node from '../components/CWNode/Node.vue'
+import STTK from '../components/STTK.vue'
 
 const routes = [
     {
-        path: '/',
-        name: 'Home',
-        redirect: '/cheatsheet',
-        component: Cheatsheet
+        path: '/changelog',
+        name: 'Changelog',
+        component: Changelog
     },
     {
         path: '/cheatsheet',
@@ -17,9 +17,15 @@ const routes = [
         component: Cheatsheet
     },
     {
-        path: '/sttk',
-        name: 'STTK',
-        component: STTK
+        path: '/credits',
+        name: 'Credits',
+        component: Credits
+    },
+    {
+        path: '/',
+        name: 'Home',
+        redirect: '/cheatsheet',
+        component: Cheatsheet
     },
     {
         path: '/node',
@@ -27,9 +33,9 @@ const routes = [
         component: Node
     },
     {
-        path: '/changelog',
-        name: 'Changelog',
-        component: Changelog
+        path: '/sttk',
+        name: 'STTK',
+        component: STTK
     }
 ]
 
