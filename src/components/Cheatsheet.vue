@@ -8,7 +8,7 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Options ({{ hp }} HP, {{ hitbox }} shots)
+                                Options ({{ hp }} HP, {{ hitbox }} {{ hitbox === 'base' ? 'damage' : 'shots' }})
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-mdb-parent="#accordionExample">
@@ -43,15 +43,19 @@
                                         </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input" id="hp300" v-model="hp" @change="hpChanged" value="300">
-                                            <label for="hp300" class="form-check-label">300 HP (Kinetic Plate)</label>
+                                            <label for="hp300" class="form-check-label">300 HP (Kinetic Armor)</label>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Body shot -->
                                 <div class="row justify-content-center">
+                                    <strong>Body shot</strong>
                                     <div class="col-6">
-                                        <strong>Body shot</strong>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" id="hb-base" v-model="hitbox" @change="hitboxChanged" value="base">
+                                            <label for="hb-base" class="form-check-label">Base Damage</label>
+                                        </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input" id="hb-head" v-model="hitbox" @change="hitboxChanged" value="head">
                                             <label for="hb-head" class="form-check-label">Head</label>
@@ -252,7 +256,7 @@ export default {
         const hp = ref(100)
         const vest = ref(0)
         const range = ref(0)
-        const hitbox = ref('chest')
+        const hitbox = ref('base')
         const currentSort = ref('id')
         const gunShowStats = ref({})
 
