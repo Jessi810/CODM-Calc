@@ -5,6 +5,12 @@
 
                 <h3>Season 8 (2021)</h3>
                 <div>
+                    <sup><sup>September 28, 2021</sup></sup>
+                    <ul>
+                        <li>Updated Clan War Node Calculator</li>
+                    </ul>
+                </div>
+                <div>
                     <sup>September 23, 2021</sup>
                     <ul>
                         <li>
