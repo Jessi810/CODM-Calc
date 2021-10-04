@@ -68,7 +68,7 @@ const gunStats = [
         type: 'AR',
         damage: [34, 26, 20],
         range: [15, 33],
-        firerate: 500,
+        firerate: 550,
         hitbox: {
             head: 1.2
         }
