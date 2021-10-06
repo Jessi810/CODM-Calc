@@ -349,11 +349,10 @@ const gunStats = [
         name: 'M13',
         type: 'AR', 
         damage: [24, 18, 16],
-        range: [26, 41],
+        range: [25, 39],
         firerate: 880,
         hitbox: {
-            head: 1.5,
-            chest: 1.1
+            head: 1.5
         }
     },
     // {
