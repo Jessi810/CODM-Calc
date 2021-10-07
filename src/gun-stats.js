@@ -334,7 +334,7 @@ const gunStats = [
         id: 1181,
         name: 'CR-56 AMAX (M67)',
         type: 'AR', 
-        damage: [48, 24, 20, 16],
+        damage: [48, 44, 35, 31],
         range: [26, 36, 52],
         firerate: 280,
         hitbox: {
