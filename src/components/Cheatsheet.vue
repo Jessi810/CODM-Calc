@@ -280,7 +280,7 @@
                 <i class="bi bi-info-square"></i> Click on table header to sort
             </div>
 
-            <Modal :stats="gunShowStats" />
+            <Modal :stats="gunShowStats" :longrange="longrange" />
 
         </div>
     </div>
