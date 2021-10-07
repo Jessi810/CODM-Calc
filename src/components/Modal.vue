@@ -28,6 +28,16 @@
                             </li>
                         </ul>
                     </p>
+                    <p v-if="longrange != 0">
+                        <strong>Damage Profile with Long Range Mod (+{{ longrange }}% range):</strong> <br>
+                        <ul>
+                            <li v-for="(damage, index) in stats.damage" :key="damage">
+                                {{ damage }} damage
+                                <span v-if="index < stats.damage.length - 1"> up to {{ Math.trunc(stats.range[index] * (longrange / 100 + 1)) }}</span>
+                                <span v-if="index == stats.damage.length - 1">{{ Math.trunc(stats.range[index - 1] * (longrange / 100 + 1))+ 1 }}+</span> meters
+                            </li>
+                        </ul>
+                    </p>
                     <p>
                         <strong>Fire rate (RPM):</strong> {{ stats.firerate }}
                     </p>
@@ -64,7 +74,8 @@
 <script>
 export default {
     props: {
-        stats: Object
+        stats: Object,
+        longrange: Number
     }
 }
 </script>
