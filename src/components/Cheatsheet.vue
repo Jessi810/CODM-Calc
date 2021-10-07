@@ -96,7 +96,7 @@
                                 <!-- Long Range Perk -->
                                 <div class="row justify-content-center">
                                     <strong>Long Range Mod (BR)</strong>
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6">
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="none" checked>
@@ -116,7 +116,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6">
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="blue">
