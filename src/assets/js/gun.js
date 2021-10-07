@@ -35,7 +35,8 @@ class Gun
             let stk = Math.ceil(params.hp / damage)
             let burstCount, burstDelay
 
-            for (let y = c; y <= this.range[x]; y++)
+            let tRange = params.longrange === 0 ? this.range[x] : this.range[x] * (params.longrange / 100 + 1)
+            for (let y = c; y <= tRange; y++)
             {
                 sttk.stk.push(stk)
 

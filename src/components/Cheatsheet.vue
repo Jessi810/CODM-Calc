@@ -49,7 +49,7 @@
                                 </div>
 
                                 <!-- Body shot -->
-                                <div class="row justify-content-center">
+                                <div class="row justify-content-center mb-3">
                                     <strong>Body shot</strong>
                                     <div class="col-6">
                                         <div class="form-check">
@@ -82,6 +82,51 @@
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input" id="hb-groin" v-model="hitbox" @change="hitboxChanged" value="groin">
                                             <label for="hb-groin" class="form-check-label">Groin</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Long Range Perk -->
+                                <div class="row justify-content-center">
+                                    <strong>Long Range Mod (BR)</strong>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="none" checked>
+                                                None
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="white">
+                                                White Mod (+10% range)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="green">
+                                                Green Mod (+20% range)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="blue">
+                                                Blue Mod (+40% range)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="purple">
+                                                Purple Mod (+60% range)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="gold" disabled>
+                                                Gold Mod (+60% range) <i class="bi bi-info-square" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Work in Progress"></i>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
@@ -259,6 +304,8 @@ export default {
         const hitbox = ref('base')
         const currentSort = ref('id')
         const gunShowStats = ref({})
+        const longrange = ref(0)
+        const addHeadshotMultiplier = ref(0)
 
         const guns = ref([{}])
         
@@ -268,7 +315,8 @@ export default {
             guns.value[i].sttk = guns.value[i].sttk({
                 hp: hp.value,
                 vest: vest.value,
-                hitbox: hitbox.value
+                hitbox: hitbox.value,
+                longrange: longrange.value
             })
         }
 
@@ -288,6 +336,40 @@ export default {
             computeSttk()
         }
 
+        const longrangeChanged = (val) => {
+            switch (val) {
+                case 'none':
+                    longrange.value = 0
+                    addHeadshotMultiplier.value = 0
+                    break
+                case 'white':
+                    longrange.value = 10
+                    addHeadshotMultiplier.value = 0
+                    break
+                case 'green':
+                    longrange.value = 20
+                    addHeadshotMultiplier.value = 0
+                    break
+                case 'blue':
+                    longrange.value = 40
+                    addHeadshotMultiplier.value = 0
+                    break
+                case 'purple':
+                    longrange.value = 60
+                    addHeadshotMultiplier.value = 0
+                    break
+                case 'gold':
+                    longrange.value = 60
+                    addHeadshotMultiplier.value = 0
+                    break
+                default:
+                    longrange.value = 0
+                    break
+            }
+
+            computeSttk()
+        }
+
         const computeSttk = () => {
             for (let [i, val] of guns.value.entries())
             {
@@ -295,7 +377,8 @@ export default {
                 guns.value[i].sttk = guns.value[i].sttk({
                     hp: hp.value,
                     vest: vest.value,
-                    hitbox: hitbox.value
+                    hitbox: hitbox.value,
+                    longrange: longrange.value
                 })
             }
 
@@ -471,6 +554,8 @@ export default {
             currentSort,
             gunShowStats,
             gunStats,
+            longrange,
+            addHeadshotMultiplier,
             hpChanged,
             vestChanged,
             hitboxChanged,
@@ -480,7 +565,8 @@ export default {
             showOrHideGun,
             sortColumn,
             showStats,
-            presetChanged
+            presetChanged,
+            longrangeChanged
         }
     }
 }

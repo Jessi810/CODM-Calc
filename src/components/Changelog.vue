@@ -5,7 +5,13 @@
 
                 <h3>Season 8 (2021)</h3>
                 <div>
-                    <sup><sup>September 28, 2021</sup></sup>
+                    <sup>October 7, 2021</sup>
+                    <ul>
+                        <li>Added options for Long Range Mod (BR)</li>
+                    </ul>
+                </div>
+                <div>
+                    <sup>September 28, 2021</sup>
                     <ul>
                         <li>Updated Clan War Node Calculator</li>
                     </ul>
