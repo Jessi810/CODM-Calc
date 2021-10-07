@@ -55,7 +55,10 @@
                         </ul>
                     </p>
                     <p>
-                    <strong v-if="'updated' in stats">Updated on {{ stats.updated.desc }} - {{ stats.updated.at.toLocaleString('default', { month: 'long' }) }} {{ stats.updated.at.getDate() }}</strong>
+                        <strong v-if="'updated' in stats">Updated on {{ stats.updated.desc }} - {{ stats.updated.at.toLocaleString('default', { month: 'long' }) }} {{ stats.updated.at.getDate() }}</strong>
+                    </p>
+                    <p>
+                        Found some incorrect stats? You can help by going to <a href="https://discord.com/channels/884757570064089162/884757770610561035">Discord</a>
                     </p>
                 </div>
                 <!-- <div class="modal-footer">
