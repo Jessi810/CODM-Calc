@@ -46,6 +46,13 @@
                                             <label for="hp300" class="form-check-label">300 HP (Kinetic Armor)</label>
                                         </div>
                                     </div>
+                                    <div class="col-12">
+                                        <label class="form-check-label">Custom HP</label>
+                                        <div class="input-group">
+                                            <input type="range" class="form-control w-75" style="height: auto;" v-model="hp" @input="hpChanged" min="1" max="300" step="1">
+                                            <input type="number" class="form-control w-25" v-model="hp" @input="hpChanged" min="1" max="300">
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- Body shot -->
