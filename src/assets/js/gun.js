@@ -32,7 +32,8 @@ class Gun
         for (let x = 0; x < this.damage.length; x++)
         {
             let damage = Math.trunc(this.damage[x] * multiplier)
-            let stk = Math.ceil(params.hp / damage)
+            let tMissed = parseInt('missed' in params ? params.missed : 0)
+            let stk = Math.ceil(params.hp / damage) + tMissed
             let burstCount, burstDelay
 
             let tRange = params.longrange === 0 ? this.range[x] : this.range[x] * (params.longrange / 100 + 1)

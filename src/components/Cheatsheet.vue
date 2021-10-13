@@ -94,7 +94,7 @@
                                 </div>
 
                                 <!-- Long Range Perk -->
-                                <div class="row justify-content-center">
+                                <div class="row justify-content-center mb-3">
                                     <strong>Long Range Mod (BR)</strong>
                                     <div class="col-12 col-sm-6">
                                         <div class="form-check">
@@ -138,6 +138,16 @@
                                     </div>
                                 </div>
 
+                                <!-- Missed shots -->
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                    <strong>Include missed shots <i class="bi bi-info-square" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Add number of missed shots to before killing the enemy"></i></strong>
+                                        <div class="input-group">
+                                            <input type="range" class="form-control w-75" style="height: auto;" v-model="missed" @input="missedChanged" min="1" max="50" step="1">
+                                            <input type="number" class="form-control w-25" v-model="missed" @input="missedChanged" min="1" max="50" step="1">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -313,6 +323,7 @@ export default {
         const gunShowStats = ref({})
         const longrange = ref(0)
         const addHeadshotMultiplier = ref(0)
+        const missed = ref(0)
 
         const guns = ref([{}])
         
@@ -323,7 +334,8 @@ export default {
                 hp: hp.value,
                 vest: vest.value,
                 hitbox: hitbox.value,
-                longrange: longrange.value
+                longrange: longrange.value,
+                missed: missed.value
             })
         }
 
@@ -377,6 +389,10 @@ export default {
             computeSttk()
         }
 
+        const missedChanged = () => {
+            computeSttk()
+        }
+
         const computeSttk = () => {
             for (let [i, val] of guns.value.entries())
             {
@@ -385,7 +401,8 @@ export default {
                     hp: hp.value,
                     vest: vest.value,
                     hitbox: hitbox.value,
-                    longrange: longrange.value
+                    longrange: longrange.value,
+                    missed: missed.value
                 })
             }
 
@@ -563,6 +580,7 @@ export default {
             gunStats,
             longrange,
             addHeadshotMultiplier,
+            missed,
             hpChanged,
             vestChanged,
             hitboxChanged,
@@ -573,7 +591,8 @@ export default {
             sortColumn,
             showStats,
             presetChanged,
-            longrangeChanged
+            longrangeChanged,
+            missedChanged
         }
     }
 }

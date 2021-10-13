@@ -5,6 +5,12 @@
 
                 <h3>Season 8 (2021)</h3>
                 <div>
+                    <sup>October 13, 2021</sup>
+                    <ul>
+                        <li>Added options for including missed shots to TTK&STK.</li>
+                    </ul>
+                </div>
+                <div>
                     <sup>October 7, 2021</sup>
                     <ul>
                         <li>Added options for Long Range Mod (BR)</li>
