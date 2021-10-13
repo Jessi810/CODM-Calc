@@ -131,8 +131,8 @@
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="gold" disabled>
-                                                Gold Mod (+60% range) <i class="bi bi-info-square" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Work in Progress"></i>
+                                                <input type="radio" class="form-check-input" name="longrange" @change="longrangeChanged($event.target.value)" value="gold">
+                                                Gold Mod (+60% range, +headshot damage)
                                             </label>
                                         </div>
                                     </div>
@@ -335,7 +335,8 @@ export default {
                 vest: vest.value,
                 hitbox: hitbox.value,
                 longrange: longrange.value,
-                missed: missed.value
+                missed: missed.value,
+                addHeadshotMultiplier: addHeadshotMultiplier.value
             })
         }
 
@@ -379,7 +380,7 @@ export default {
                     break
                 case 'gold':
                     longrange.value = 60
-                    addHeadshotMultiplier.value = 0
+                    addHeadshotMultiplier.value = 0.75
                     break
                 default:
                     longrange.value = 0
@@ -402,7 +403,8 @@ export default {
                     vest: vest.value,
                     hitbox: hitbox.value,
                     longrange: longrange.value,
-                    missed: missed.value
+                    missed: missed.value,
+                    addHeadshotMultiplier: addHeadshotMultiplier.value
                 })
             }
 

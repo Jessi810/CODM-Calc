@@ -19,7 +19,7 @@ class Gun
     sttk(params)
     {
         let multiplier = (params.hitbox in this.hitbox) ? this.hitbox[params.hitbox] : 1
-
+        
         let sttk = {
             stk: [],
             ttk: []
@@ -31,7 +31,10 @@ class Gun
         let c = 0
         for (let x = 0; x < this.damage.length; x++)
         {
-            let damage = Math.trunc(this.damage[x] * multiplier)
+            // If Golden Long Range mod is selected and headshot (adds x0.75 damage to head)
+            let damage = ('addHeadshotMultiplier' in params && params.hitbox === 'head')
+                ? damage = Math.trunc(this.damage[x] * (multiplier + params.addHeadshotMultiplier))
+                : damage = Math.trunc(this.damage[x] * multiplier)
             let tMissed = parseInt('missed' in params ? params.missed : 0)
             let stk = Math.ceil(params.hp / damage) + tMissed
             let burstCount, burstDelay
