@@ -6,6 +6,7 @@ const gunStats = [
         damage: [24, 22, 19, 16],
         range: [10, 17, 25],
         firerate: 769,
+        bv: 563,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -18,6 +19,7 @@ const gunStats = [
         damage: [30, 27, 22],
         range: [21, 41],
         firerate: 788,
+        bv: 692,
         burst: {
             rounds: 3,
             delay: 266
@@ -35,6 +37,7 @@ const gunStats = [
         damage: [24, 20, 16],
         range: [20, 36],
         firerate: 769,
+        bv: 529,
         hitbox: {
             head: 1.15,
             legs: 0.9
@@ -47,6 +50,7 @@ const gunStats = [
         damage: [33, 26, 23, 21],
         range: [20, 30, 55],
         firerate: 550,
+        bv: 692,
         hitbox: {
             head: 1.2
         }
@@ -58,6 +62,7 @@ const gunStats = [
         damage: [25, 21, 16, 15],
         range: [14, 24, 35],
         firerate: 750,
+        bv: 692,
         hitbox: {
             head: 1.2
         }
@@ -69,6 +74,7 @@ const gunStats = [
         damage: [34, 26, 20],
         range: [15, 33],
         firerate: 550,
+        bv: 692,
         hitbox: {
             head: 1.2
         }
@@ -80,6 +86,7 @@ const gunStats = [
         damage: [24, 20, 19],
         range: [16, 36],
         firerate: 682,
+        bv: 563,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -92,6 +99,7 @@ const gunStats = [
         damage: [27, 22, 19],
         range: [18, 30],
         firerate: 665,
+        bv: 600,
         hitbox: {
             head: 1.2
         }
@@ -103,6 +111,7 @@ const gunStats = [
         damage: [26, 22, 18],
         range: [23, 38],
         firerate: 633,
+        bv: 600,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -119,6 +128,7 @@ const gunStats = [
         damage: [26, 24, 20, 19],
         range: [16, 26, 36],
         firerate: 630,
+        bv: 600,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -131,6 +141,7 @@ const gunStats = [
         damage: [37, 30, 24],
         range: [23, 43],
         firerate: 500,
+        bv: 692,
         hitbox: {
             head: 1.1
         }
@@ -139,9 +150,10 @@ const gunStats = [
         id: 1110,
         name: 'KN-44',
         type: 'AR',
-        firerate: 633,
         damage: [26, 24, 19],
         range: [20, 33],
+        firerate: 633,
+        bv: 563,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -154,6 +166,7 @@ const gunStats = [
         damage: [26, 22, 17],
         range: [14, 36],
         firerate: 697,
+        bv: 563,
         hitbox: {
 
         }
@@ -165,6 +178,7 @@ const gunStats = [
         damage: [23, 18, 16],
         range: [22, 34],
         firerate: 711,
+        bv: 600,
         hitbox: {
             head: 1.3
         }
@@ -176,6 +190,7 @@ const gunStats = [
         damage: [27, 24, 17],
         range: [5, 26],
         firerate: 711,
+        bv: 600,
         hitbox: {
             head: 2,
             chest: 1.3,
@@ -192,6 +207,7 @@ const gunStats = [
         damage: [32, 31, 25, 24, 19],
         range: [14, 17, 25, 35],
         firerate: 570,
+        bv: 600,
         hitbox: {
             head: 1.2
         }
@@ -203,6 +219,7 @@ const gunStats = [
         damage: [32, 31, 25, 24, 19],
         range: [14, 17, 25, 35],
         firerate: 570,
+        bv: 600,
         hitbox: {
             head: 1.2,
             chest: 1.2
@@ -215,6 +232,7 @@ const gunStats = [
         damage: [26, 24, 19, 18],
         range: [11, 26, 41],
         firerate: 652,
+        bv: 643,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -227,6 +245,7 @@ const gunStats = [
         damage: [31, 29, 18, 16],
         range: [6, 16, 26],
         firerate: 740,
+        bv: 643,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -239,6 +258,7 @@ const gunStats = [
         damage: [26, 24, 19, 18],
         range: [16, 39, 61],
         firerate: 652,
+        bv: 643,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -251,6 +271,7 @@ const gunStats = [
         damage: [26, 24, 19, 18],
         range: [16, 39, 61],
         firerate: 711,
+        bv: 643,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -263,6 +284,7 @@ const gunStats = [
         damage: [26, 24, 19, 18],
         range: [22, 52, 82],
         firerate: 652,
+        bv: 643,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -275,6 +297,7 @@ const gunStats = [
         damage: [26, 24, 19, 18],
         range: [13, 32, 51],
         firerate: 652,
+        bv: 643,
         hitbox: {
             head: 1.2,
             chest: 1.1
@@ -287,6 +310,7 @@ const gunStats = [
         damage: [25, 19],
         range: [26],
         firerate: 675,
+        bv: 692,
         hitbox: {
             head: 1.2,
             chest: 1.2
@@ -299,21 +323,28 @@ const gunStats = [
         damage: [28, 25, 22, 19],
         range: [7, 20, 30],
         firerate: 800,
+        bv: 450,
         hitbox: {
             head: 1.5,
             chest: 1.1
         }
     },
-    // {
-    //     id: 1171,
-    //     name: 'AS VAL (FMJ)',
-    //     type: 'AR', 
-    //     damage: [48, 44, 35, 30],
-    //     range: [25, 38, 75],
-    //     firerate: 800,
-    //     hitbox: {
-    //     }
-    // },
+    {
+        id: 1171,
+        name: 'AS VAL (FMJ)',
+        type: 'AR',
+        damage: [48, 44, 35, 30],
+        range: [25, 38, 75],
+        firerate: 257,
+        bv: 1000,
+        hitbox: {
+            head: 2.1,
+            chest: 1.3,
+            stomach: 1.3,
+            groin: 1.3,
+            arms: 1.3
+        }
+    },
     {
         id: 1180,
         name: 'CR-56 AMAX',
@@ -321,6 +352,7 @@ const gunStats = [
         damage: [25, 24, 20, 16],
         range: [13, 18, 26],
         firerate: 710,
+        bv: 643,
         hitbox: {
             head: 1.5,
             chest: 1.3,
@@ -337,6 +369,7 @@ const gunStats = [
         damage: [48, 44, 35, 31],
         range: [26, 36, 52],
         firerate: 280,
+        bv: 1000,
         hitbox: {
             head: 2.1,
             chest: 1.3,
@@ -351,6 +384,7 @@ const gunStats = [
         damage: [24, 18, 16],
         range: [25, 39],
         firerate: 880,
+        bv: 563,
         hitbox: {
             head: 1.5
         }
@@ -372,6 +406,7 @@ const gunStats = [
         damage: [30, 23, 18],
         range: [16, 38],
         firerate: 750,
+        bv: 600,
         hitbox: {
 
         }
@@ -383,6 +418,7 @@ const gunStats = [
         damage: [25, 22, 20, 18],
         range: [26, 36, 56],
         firerate: 620,
+        bv: 643,
         hitbox: {
             head: 1.2
         }
@@ -394,6 +430,7 @@ const gunStats = [
         damage: [31, 23, 18],
         range: [21, 56],
         firerate: 666,
+        bv: 692,
         hitbox: {
             head: 1.2
         }
@@ -405,6 +442,7 @@ const gunStats = [
         damage: [32, 23, 19],
         range: [21, 51],
         firerate: 633,
+        bv: 692,
         hitbox: {
             head: 1.1
         }
@@ -416,6 +454,7 @@ const gunStats = [
         damage: [25, 21, 17],
         range: [10, 36],
         firerate: 750,
+        bv: 692,
         hitbox: {
             head: 1.2
         }
@@ -427,6 +466,7 @@ const gunStats = [
         damage: [31, 25, 21, 19],
         range: [16, 20, 50],
         firerate: 710,
+        bv: 692,
         hitbox: {
             head: 1.2
         },
@@ -442,6 +482,7 @@ const gunStats = [
         damage: [29, 22, 19],
         range: [24, 36],
         firerate: 650,
+        bv: 692,
         hitbox: {
             head: 1.1
         },
@@ -457,6 +498,7 @@ const gunStats = [
         damage: [31, 22, 19],
         range: [17, 25],
         firerate: 730,
+        bv: 692,
         hitbox: {
             head: 1.1
         },
@@ -472,6 +514,7 @@ const gunStats = [
         damage: [28, 24, 18, 15],
         range: [5, 19, 33],
         firerate: 769,
+        bv: 529,
         hitbox: {
             head: 1.1,
             chest: 1.1,
@@ -489,6 +532,7 @@ const gunStats = [
         damage: [27, 24, 20, 17],
         range: [9, 16, 21],
         firerate: 788,
+        bv: 563,
         burst: {
             rounds: 3,
             delay: 150
@@ -507,6 +551,7 @@ const gunStats = [
         damage: [27, 22, 17, 15],
         range: [6, 15, 28],
         firerate: 745,
+        bv: 529,
         hitbox: {
             head: 1.2,
             chest: 1.1,
@@ -524,6 +569,7 @@ const gunStats = [
         damage: [30, 23, 19],
         range: [16, 29],
         firerate: 630,
+        bv: 529,
         hitbox: {
             head: 1.1,
             legs: 0.9
@@ -536,6 +582,7 @@ const gunStats = [
         damage: [30, 23, 19],
         range: [16, 29],
         firerate: 703,
+        bv: 529,
         hitbox: {
             head: 1.1,
             legs: 0.9
@@ -548,6 +595,7 @@ const gunStats = [
         damage: [25, 21, 18, 16],
         range: [8, 14, 19],
         firerate: 916,
+        bv: 529,
         hitbox: {
             head: 1.1,
             legs: 0.9
@@ -578,6 +626,7 @@ const gunStats = [
         damage: [34, 26, 21, 19, 16],
         range: [12, 19, 24, 30],
         firerate: 790,
+        bv: 500,
         burst: {
             rounds: 4,
             delay: 155
@@ -594,6 +643,7 @@ const gunStats = [
         damage: [28, 24, 19],
         range: [20, 30],
         firerate: 600,
+        bv: 600,
         hitbox: {
             head: 1.3,
             chest: 1.1
@@ -606,6 +656,7 @@ const gunStats = [
         damage: [24, 22, 19, 18, 16],
         range: [8, 19, 26, 33],
         firerate: 800,
+        bv: 500,
         hitbox: {
             head: 1.2,
             legs: 0.9
@@ -618,6 +669,7 @@ const gunStats = [
         damage: [25, 23, 17, 15],
         range: [11, 16, 21],
         firerate: 830,
+        bv: 563,
         hitbox: {
             head: 1.1,
             legs: 0.9
@@ -630,6 +682,7 @@ const gunStats = [
         damage: [26, 23, 17, 15],
         range: [12, 18, 24],
         firerate: 810,
+        bv: 563,
         hitbox: {
             head: 1.1,
             legs: 0.9
@@ -642,6 +695,7 @@ const gunStats = [
         damage: [23, 18, 13, 12],
         range: [12, 17, 24],
         firerate: 1110,
+        bv: 529,
         hitbox: {
             head: 1.1,
             chest: 1.1,
@@ -662,6 +716,7 @@ const gunStats = [
         damage: [25, 21, 17, 15],
         range: [12, 16, 24],
         firerate: 755,
+        bv: 529,
         hitbox: {
             head: 1.05,
             legs: 0.9
@@ -674,6 +729,7 @@ const gunStats = [
         damage: [27, 23, 20, 18],
         range: [15, 20, 30],
         firerate: 682,
+        bv: 529,
         hitbox: {
             head: 1.05,
             legs: 0.9
@@ -686,6 +742,7 @@ const gunStats = [
         damage: [22, 19, 16, 12],
         range: [8, 15, 25],
         firerate: 889,
+        bv: 529,
         hitbox: {
             head: 1.3,
             chest: 1.3,
@@ -712,6 +769,7 @@ const gunStats = [
         damage: [26, 24, 22, 16],
         range: [15, 21, 31],
         firerate: 650,
+        bv: 529,
         hitbox: {
             head: 1.2,
             groin: 0.8,
@@ -725,6 +783,7 @@ const gunStats = [
         damage: [26, 24, 22, 16],
         range: [12, 17, 25],
         firerate: 650,
+        bv: 529,
         hitbox: {
             head: 1.2
         }
@@ -736,6 +795,7 @@ const gunStats = [
         damage: [30, 24, 16, 15],
         range: [12, 16, 21],
         firerate: 850,
+        bv: 529,
         hitbox: {
             head: 1.1,
             groin: 0.9,
@@ -749,6 +809,7 @@ const gunStats = [
         damage: [30, 24, 16, 15],
         range: [12, 16, 21],
         firerate: 850,
+        bv: 529,
         hitbox: {
             head: 1.4,
             chest: 1.15,
@@ -762,6 +823,7 @@ const gunStats = [
         damage: [60, 40, 34, 25],
         range: [19, 21, 35],
         firerate: 380,
+        bv: 600,
         hitbox: {
             head: 1.5
         }
