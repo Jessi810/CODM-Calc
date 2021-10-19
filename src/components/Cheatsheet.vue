@@ -143,8 +143,8 @@
                                     <div class="col-12">
                                     <strong>Include missed shots <i class="bi bi-info-square" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Add number of missed shots to before killing the enemy"></i></strong>
                                         <div class="input-group">
-                                            <input type="range" class="form-control w-75" style="height: auto;" v-model="missed" @input="missedChanged" min="1" max="50" step="1">
-                                            <input type="number" class="form-control w-25" v-model="missed" @input="missedChanged" min="1" max="50" step="1">
+                                            <input type="range" class="form-control w-75" style="height: auto;" v-model="missed" @input="missedChanged" min="0" max="50" step="1">
+                                            <input type="number" class="form-control w-25" v-model="missed" @input="missedChanged" min="0" max="50" step="1">
                                         </div>
                                     </div>
                                 </div>
