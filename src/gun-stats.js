@@ -613,7 +613,7 @@ const gunStats = [
         damage: [31, 22, 19],
         range: [17, 25],
         firerate: 730,
-        bv: 692,
+        bv: 728,
         hitbox: {
             head: 1.1
         },
@@ -696,7 +696,7 @@ const gunStats = [
         type: 'SMG',
         damage: [30, 23, 19],
         range: [16, 29],
-        firerate: 703,
+        firerate: 693,
         bv: 529,
         hitbox: {
             head: 1.1,
