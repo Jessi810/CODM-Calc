@@ -5,6 +5,7 @@ import Credits from '../components/Credits.vue'
 import Node from '../components/CWNode/Node.vue'
 import STTK from '../components/STTK.vue'
 import Validate from '../components/Validate.vue'
+import UndeadSiege from '../components/UndeadSiege/Cheatsheet.vue'
 
 const routes = [
     {
@@ -42,6 +43,11 @@ const routes = [
         path: '/validate',
         name: 'Validate',
         component: Validate
+    },
+    {
+        path: '/undeadsiege',
+        name: 'UndeadSiege',
+        component: UndeadSiege
     }
 ]
 
