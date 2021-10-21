@@ -422,7 +422,7 @@ const gunStats = [
         }
     },
     {
-        id: 1200,
+        id: 1201,
         name: 'Swordfish (5-rounds Burst)',
         type: 'AR', 
         damage: [24, 22],
