@@ -167,6 +167,12 @@
                                                 Select/unselect all guns
                                             </label>
                                         </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" @click="showLatestGuns">
+                                                Show latest updated guns - Season 9 (2021)
+                                            </label>
+                                        </div>
                                     </div>
                                     <div class="col-6">
                                         <strong>Assault Rifles:</strong>
@@ -341,6 +347,13 @@ export default {
         const longrange = ref(0)
         const addHeadshotMultiplier = ref(0)
         const missed = ref(0)
+        const latestGuns = ref([])
+
+        for (let lg of gunStats)
+        {
+            if (lg.hasOwnProperty('updated') && lg.updated.desc === 'Season 9 (2021)')
+                latestGuns.value.push(lg)
+        }
 
         const guns = ref([{}])
         
@@ -582,6 +595,33 @@ export default {
             computeSttk()
         }
 
+        const showLatestGuns = () => {
+            let checkboxes, rowGuns
+
+            // Unselects first all guns
+            checkboxes = document.querySelectorAll('[name="cbShowHideAR"], [name="cbShowHideSMG"], [name="cbShowHideLMG"], [name="cbShowHideHG"], [name="cbShowHideSR"]')
+            rowGuns = document.querySelectorAll('[name="rowGunAR"], [name="rowGunSMG"], [name="rowGunLMG"], [name="rowGunHG"], [name="rowGunSR"]')
+            
+            for (let checkbox of checkboxes) {
+                checkbox.checked = false
+            }
+            for (let rowGun of rowGuns) {
+                rowGun.hidden = true
+            }
+            document.getElementById('cbSelectAllAR').checked = false
+            document.getElementById('cbSelectAllSMG').checked = false
+            document.getElementById('cbSelectAllLMG').checked = false
+            document.getElementById('cbSelectAllHG').checked = false
+            document.getElementById('cbSelectAllSR').checked = false
+            document.getElementById('cbSelectAll').checked = false
+
+            // Then show only latest updated guns
+            for (let lg of latestGuns.value) {
+                document.getElementById(lg.type + '' + lg.id).hidden = false
+                document.getElementById('cb' + lg.type + lg.id).checked = true
+            }
+        }
+
         onMounted(() => {
             // $(document).ready(function () {
             //     $('#cheatsheet-table').DataTable({
@@ -605,6 +645,7 @@ export default {
             longrange,
             addHeadshotMultiplier,
             missed,
+            latestGuns,
             hpChanged,
             vestChanged,
             hitboxChanged,
@@ -616,7 +657,8 @@ export default {
             showStats,
             presetChanged,
             longrangeChanged,
-            missedChanged
+            missedChanged,
+            showLatestGuns
         }
     }
 }

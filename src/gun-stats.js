@@ -419,6 +419,10 @@ const gunStats = [
             groin: 1.1,
             arms: 1.2,
             legs: 0.9
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
         }
     },
     {
@@ -440,6 +444,10 @@ const gunStats = [
             groin: 1.1,
             arms: 1.2,
             legs: 0.9
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
         }
     },
     // {
