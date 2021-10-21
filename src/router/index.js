@@ -4,6 +4,7 @@ import Cheatsheet from '../components/Cheatsheet.vue'
 import Credits from '../components/Credits.vue'
 import Node from '../components/CWNode/Node.vue'
 import STTK from '../components/STTK.vue'
+import Validate from '../components/Validate.vue'
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: '/sttk',
         name: 'STTK',
         component: STTK
+    },
+    {
+        path: '/validate',
+        name: 'Validate',
+        component: Validate
     }
 ]
 
