@@ -8,7 +8,10 @@
                     <sup>October 21, 2021</sup>
                     <ul>
                         <li><strong>New</strong> Decreased damage profile of MX9 (BR only)</li>
-                        <li><strong>New</strong> Rytec (base and thermite&explosive ammo) stats added</li>
+                        <li>
+                            <strong>New</strong> Rytec (base and thermite&explosive ammo) stats added
+                            <ul><li>Note: Thermite and Explosive ammo still not included for TTK&STK calculations at this moment.</li></ul>
+                        </li>
                         <li>KN-44 stats updated</li>
                         <li>CR-56 AMAX (M67) stats updated</li>
                         <li>UL736 stats updated</li>
@@ -16,6 +19,7 @@
                         <li>
                             Full Patch Notes:
                             <ul>
+                                <li><a href="https://www.reddit.com/r/CallOfDutyMobile/comments/qceq4z/call_of_duty_mobile_october_20th_community_update/">CODM Subreddit</a></li>
                                 <li><a href="https://www.facebook.com/codm/posts/4041780152594467?__tn__=K-R">Garena CODM FB</a></li>
                             </ul>
                         </li>

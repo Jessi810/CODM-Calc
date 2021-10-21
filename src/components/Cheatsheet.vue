@@ -236,6 +236,23 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-6">
+                                        <strong>Sniper Rifles:</strong>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" id="cbSelectAllSR" @click="showOrHideGun('SR', $event)" checked>
+                                                Select all SR
+                                            </label>
+                                        </div>
+                                        <div v-for="gun in gunStats" :key="gun.id">
+                                            <div class="form-check" v-if="gun.type === 'SR'">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" :id="'cb' + gun.type + gun.id" name="cbShowHideSR" @click="showOrHideGun(gun.type + gun.id, $event, 'cbSelectAllSR')" checked>
+                                                    {{ gun.name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -463,7 +480,7 @@ export default {
         }
 
         const showOrHideGun = (id, event, idSelectAll) => {
-            if (id === 'AR' || id === 'SMG' || id === 'LMG' || id === 'HG' || id === 'All') {
+            if (id === 'AR' || id === 'SMG' || id === 'LMG' || id === 'HG' || id === 'SR' || id === 'All') {
                 let checkboxes, rowGuns
 
                 switch (id) {
@@ -483,14 +500,19 @@ export default {
                         checkboxes = document.getElementsByName('cbShowHideHG')
                         rowGuns = document.getElementsByName('rowGunHG')
                         break
+                    case 'SR':
+                        checkboxes = document.getElementsByName('cbShowHideSR')
+                        rowGuns = document.getElementsByName('rowGunSR')
+                        break
                     case 'All':
-                        checkboxes = document.querySelectorAll('[name="cbShowHideAR"], [name="cbShowHideSMG"], [name="cbShowHideLMG"], [name="cbShowHideHG"]')
-                        rowGuns = document.querySelectorAll('[name="rowGunAR"], [name="rowGunSMG"], [name="rowGunLMG"], [name="rowGunHG"]')
+                        checkboxes = document.querySelectorAll('[name="cbShowHideAR"], [name="cbShowHideSMG"], [name="cbShowHideLMG"], [name="cbShowHideHG"], [name="cbShowHideSR"]')
+                        rowGuns = document.querySelectorAll('[name="rowGunAR"], [name="rowGunSMG"], [name="rowGunLMG"], [name="rowGunHG"], [name="rowGunSR"]')
 
                         document.getElementById('cbSelectAllAR').checked = event.target.checked
                         document.getElementById('cbSelectAllSMG').checked = event.target.checked
                         document.getElementById('cbSelectAllLMG').checked = event.target.checked
                         document.getElementById('cbSelectAllHG').checked = event.target.checked
+                        document.getElementById('cbSelectAllSR').checked = event.target.checked
 
                         break
                 }
