@@ -7,6 +7,7 @@
                 <div>
                     <sup>October 21, 2021</sup>
                     <ul>
+                        <li><strong>New</strong> Swordfish stats</li>
                         <li><strong>New</strong> Decreased damage profile of MX9 (BR only)</li>
                         <li>
                             <strong>New</strong> Rytec (base and thermite&explosive ammo) stats added

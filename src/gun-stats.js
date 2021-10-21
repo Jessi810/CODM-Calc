@@ -400,6 +400,48 @@ const gunStats = [
             head: 1.5
         }
     },
+    {
+        id: 1200,
+        name: 'Swordfish',
+        type: 'AR', 
+        damage: [24, 22],
+        range: [20],
+        firerate: 900,
+        bv: undefined,
+        burst: {
+            rounds: 4,
+            delay: 250
+        },
+        hitbox: {
+            head: 1.4,
+            chest: 1.2,
+            stomach: 1.1,
+            groin: 1.1,
+            arms: 1.2,
+            legs: 0.9
+        }
+    },
+    {
+        id: 1200,
+        name: 'Swordfish (5-rounds Burst)',
+        type: 'AR', 
+        damage: [24, 22],
+        range: [40],
+        firerate: 900,
+        bv: undefined,
+        burst: {
+            rounds: 5,
+            delay: 250
+        },
+        hitbox: {
+            head: 1.4,
+            chest: 1.2,
+            stomach: 1.1,
+            groin: 1.1,
+            arms: 1.2,
+            legs: 0.9
+        }
+    },
     // {
     //     id: 2010,
     //     name: 'M21 EBR',
