@@ -3,6 +3,25 @@
         <div class="row justify-content-center my-3">
             <div class="col-12 col-lg-9">
 
+                <h3>Season 9 (2021)</h3>
+                <div>
+                    <sup>October 21, 2021</sup>
+                    <ul>
+                        <li><strong>New</strong> Decreased damage profile of MX9 (BR only)</li>
+                        <li><strong>New</strong> Rytec (base and thermite&explosive ammo) stats added</li>
+                        <li>KN-44 stats updated</li>
+                        <li>CR-56 AMAX (M67) stats updated</li>
+                        <li>UL736 stats updated</li>
+                        <li>Chopper stats updated</li>
+                        <li>
+                            Full Patch Notes:
+                            <ul>
+                                <li><a href="https://www.facebook.com/codm/posts/4041780152594467?__tn__=K-R">Garena CODM FB</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
                 <h3>Season 8 (2021)</h3>
                 <div>
                     <sup>October 13, 2021</sup>

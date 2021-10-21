@@ -150,13 +150,18 @@ const gunStats = [
         id: 1110,
         name: 'KN-44',
         type: 'AR',
-        damage: [26, 24, 19],
+        damage: [28, 24, 19],
         range: [20, 33],
         firerate: 633,
         bv: 563,
         hitbox: {
             head: 1.2,
-            chest: 1.1
+            chest: 1.1,
+            arms: 1.1
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
         }
     },
     {
@@ -367,14 +372,20 @@ const gunStats = [
         name: 'CR-56 AMAX (M67)',
         type: 'AR', 
         damage: [48, 44, 35, 31],
-        range: [26, 36, 52],
+        range: [30, 42, 60],
         firerate: 280,
         bv: 1000,
         hitbox: {
             head: 2.1,
             chest: 1.3,
             stomach: 1.1,
-            arms: 1.3
+            arms: {
+                lower: 1.3
+            }
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
         }
     },
     {
@@ -400,6 +411,60 @@ const gunStats = [
     //     }
     // },
     {
+        id: 2080,
+        name: 'Rytec',
+        type: 'SR', 
+        damage: [80, 70],
+        range: [51],
+        firerate: 120,
+        bv: 750,
+        hitbox: {
+            head: 2.0,
+            chest: 1.5,
+            stomach: 1.3,
+            arms: 1.5
+        }
+    },
+    {
+        id: 2081,
+        name: 'Rytec (Thermite)',
+        type: 'SR', 
+        damage: [60, 40],
+        thermite: {
+            damage: 10,
+            ticks: 4,
+            ticks_per_second: undefined
+        },
+        range: [51],
+        firerate: 120,
+        bv: 750,
+        hitbox: {
+            head: 5.25,
+            chest: 1.85,
+            stomach: 1.5,
+            arms: {
+                upper: 1.85,
+                lower: 2.35
+            }
+        }
+    },
+    {
+        id: 2082,
+        name: 'Rytec (Explosive)',
+        type: 'SR', 
+        damage: [80, 60],
+        explosive: undefined,
+        range: [51],
+        firerate: 120,
+        bv: 750,
+        hitbox: {
+            head: 2.5,
+            chest: 2.0,
+            stomach: 2.0,
+            arms: 2.0
+        }
+    },
+    {
         id: 3010,
         name: 'S36',
         type: 'LMG',
@@ -415,12 +480,16 @@ const gunStats = [
         id: 3020,
         name: 'UL736',
         type: 'LMG',
-        damage: [25, 22, 20, 18],
+        damage: [28, 24, 20, 19],
         range: [26, 36, 56],
         firerate: 620,
         bv: 643,
         hitbox: {
             head: 1.2
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
         }
     },
     {
@@ -452,11 +521,15 @@ const gunStats = [
         name: 'Chopper',
         type: 'LMG',
         damage: [25, 21, 17],
-        range: [10, 36],
+        range: [14, 36],
         firerate: 750,
         bv: 692,
         hitbox: {
             head: 1.2
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
         }
     },
     {
@@ -790,7 +863,7 @@ const gunStats = [
     },
     {
         id: 4150,
-        name: 'MX9',
+        name: 'MX9 (MP)',
         type: 'SMG',
         damage: [30, 24, 16, 15],
         range: [12, 16, 21],
@@ -804,7 +877,7 @@ const gunStats = [
     },
     {
         id: 4151,
-        name: 'MX9 (LC)',
+        name: 'MX9 (MP+LC)',
         type: 'SMG',
         damage: [30, 24, 16, 15],
         range: [12, 16, 21],
@@ -814,6 +887,42 @@ const gunStats = [
             head: 1.4,
             chest: 1.15,
             legs: 0.9
+        }
+    },
+    {
+        id: 4152,
+        name: 'MX9 (BR)',
+        type: 'SMG',
+        damage: [25, 21, 18, 16],
+        range: [12, 16, 21],
+        firerate: 850,
+        bv: 529,
+        hitbox: {
+            head: 1.1,
+            groin: 0.9,
+            legs: 0.7
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
+        }
+    },
+    {
+        id: 4153,
+        name: 'MX9 (BR+LC)',
+        type: 'SMG',
+        damage: [25, 21, 18, 16],
+        range: [12, 16, 21],
+        firerate: 850,
+        bv: 529,
+        hitbox: {
+            head: 1.4,
+            chest: 1.15,
+            legs: 0.9
+        },
+        updated: {
+            at: new Date('October 21, 2021'),
+            desc: 'Season 9 (2021)'
         }
     },
     {
