@@ -61,7 +61,7 @@ const gunStats = [
         type: 'AR',
         damage: [25, 21, 16, 15],
         range: [14, 24, 35],
-        firerate: 750,
+        firerate: 674,
         bv: 692,
         hitbox: {
             head: 1.2
@@ -249,7 +249,7 @@ const gunStats = [
         type: 'AR',
         damage: [31, 29, 18, 16],
         range: [6, 16, 26],
-        firerate: 740,
+        firerate: 728,
         bv: 643,
         hitbox: {
             head: 1.2,
@@ -275,7 +275,7 @@ const gunStats = [
         type: 'AR',
         damage: [26, 24, 19, 18],
         range: [16, 39, 61],
-        firerate: 711,
+        firerate: 709,
         bv: 643,
         hitbox: {
             head: 1.2,
@@ -796,7 +796,7 @@ const gunStats = [
         type: 'SMG',
         damage: [26, 23, 17, 15],
         range: [12, 18, 24],
-        firerate: 810,
+        firerate: 747,
         bv: 563,
         hitbox: {
             head: 1.1,
@@ -843,7 +843,7 @@ const gunStats = [
         type: 'SMG',
         damage: [27, 23, 20, 18],
         range: [15, 20, 30],
-        firerate: 682,
+        firerate: 675,
         bv: 529,
         hitbox: {
             head: 1.05,
@@ -870,7 +870,7 @@ const gunStats = [
         type: 'SMG',
         damage: [22, 19, 16, 12],
         range: [8, 15, 20],
-        firerate: 1029,
+        firerate: 983,
         hitbox: {
             head: 1.3,
             chest: 1.1,
