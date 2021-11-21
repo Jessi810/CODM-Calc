@@ -170,7 +170,7 @@
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input type="checkbox" class="form-check-input" @click="showLatestGuns">
-                                                Show latest updated guns - Season 9 (2021)
+                                                Show latest updated guns - Season 10 (2021)
                                             </label>
                                         </div>
                                     </div>
@@ -351,7 +351,7 @@ export default {
 
         for (let lg of gunStats)
         {
-            if (lg.hasOwnProperty('updated') && lg.updated.desc === 'Season 9 (2021)')
+            if (lg.hasOwnProperty('updated') && lg.updated.desc === 'Season 10 (2021)')
                 latestGuns.value.push(lg)
         }
 
