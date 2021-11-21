@@ -5,11 +5,34 @@ const gunStats = [
         type: 'AR',
         damage: [24, 22, 19, 16],
         range: [10, 17, 25],
-        firerate: 769,
+        firerate: 857,
+        bv: 563,
+        hitbox: {
+            head: 1.2,
+            chest: 1.1,
+            stomach: 1.1,
+            groin: 1.1
+        },
+        updated: {
+            at: new Date('November 21, 2021'),
+            desc: 'Season 10 (2021)'
+        }
+    },
+    {
+        id: 1011,
+        name: 'Type 25 (SP)',
+        type: 'AR',
+        damage: [28, 24, 21, 19, 16],
+        range: [10, 17, 21, 25],
+        firerate: 857,
         bv: 563,
         hitbox: {
             head: 1.2,
             chest: 1.1
+        },
+        updated: {
+            at: new Date('November 21, 2021'),
+            desc: 'Season 10 (2021)'
         }
     },
     {
@@ -913,9 +936,9 @@ const gunStats = [
     },
     {
         id: 4150,
-        name: 'MX9 (MP)',
+        name: 'MX9',
         type: 'SMG',
-        damage: [30, 24, 16, 15],
+        damage: [25, 21, 18, 16],
         range: [12, 16, 21],
         firerate: 850,
         bv: 529,
@@ -923,43 +946,15 @@ const gunStats = [
             head: 1.1,
             groin: 0.9,
             legs: 0.7
+        },
+        updated: {
+            at: new Date('November 21, 2021'),
+            desc: 'Season 10 (2021)'
         }
     },
     {
         id: 4151,
-        name: 'MX9 (MP+LC)',
-        type: 'SMG',
-        damage: [30, 24, 16, 15],
-        range: [12, 16, 21],
-        firerate: 850,
-        bv: 529,
-        hitbox: {
-            head: 1.4,
-            chest: 1.15,
-            legs: 0.9
-        }
-    },
-    {
-        id: 4152,
-        name: 'MX9 (BR)',
-        type: 'SMG',
-        damage: [25, 21, 18, 16],
-        range: [12, 16, 21],
-        firerate: 850,
-        bv: 529,
-        hitbox: {
-            head: 1.1,
-            groin: 0.9,
-            legs: 0.7
-        },
-        updated: {
-            at: new Date('October 21, 2021'),
-            desc: 'Season 9 (2021)'
-        }
-    },
-    {
-        id: 4153,
-        name: 'MX9 (BR+LC)',
+        name: 'MX9 (LC)',
         type: 'SMG',
         damage: [25, 21, 18, 16],
         range: [12, 16, 21],
@@ -971,8 +966,27 @@ const gunStats = [
             legs: 0.9
         },
         updated: {
-            at: new Date('October 21, 2021'),
-            desc: 'Season 9 (2021)'
+            at: new Date('November 21, 2021'),
+            desc: 'Season 10 (2021)'
+        }
+    },
+    {
+        id: 4160,
+        name: 'CBR4',
+        type: 'SMG',
+        damage: [24, 23, 18, 16],
+        range: [11, 17, 26],
+        firerate: 800,
+        bv: undefined,
+        hitbox: {
+            head: 1.35,
+            chest: 1.2,
+            stomach: 1.2,
+            groin: 1.2
+        },
+        updated: {
+            at: new Date('November 21, 2021'),
+            desc: 'Season 10 (2021)'
         }
     },
     {
@@ -991,11 +1005,13 @@ const gunStats = [
         id: 7020,
         name: 'MW11',
         type: 'HG',
-        damage: [26, 20, 17, 16],
-        range: [21, 25, 28],
+        damage: [35, 26, 20, 17, 16],
+        range: [9, 20, 25, 30],
         firerate: 440,
         hitbox: {
-            head: 1.4
+            head: 1.75,
+            chest: 1.15,
+            stomach: 1.15
         }
     },
     {
