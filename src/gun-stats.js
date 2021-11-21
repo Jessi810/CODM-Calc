@@ -1012,6 +1012,10 @@ const gunStats = [
             head: 1.75,
             chest: 1.15,
             stomach: 1.15
+        },
+        updated: {
+            at: new Date('November 21, 2021'),
+            desc: 'Season 10 (2021)'
         }
     },
     {
