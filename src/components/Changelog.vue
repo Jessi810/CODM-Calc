@@ -2,6 +2,24 @@
     <div class="container">
         <div class="row justify-content-center my-3">
             <div class="col-12 col-lg-9">
+            
+                <h3>Season 10 (2021)</h3>
+                <div>
+                    <sup>November 21, 2021</sup>
+                    <ul>
+                        <li><strong>New</strong> CBR4 stats</li>
+                        <li><strong>New</strong> Type 25 (SP) stats</li>
+                        <li>Type 25 stats updated</li>
+                        <li>MX9 stats updated</li>
+                        <li>MW11 stats updated</li>
+                        <li>
+                            Full Patch Notes:
+                            <ul>
+                                <li><a href="https://www.reddit.com/r/CallOfDutyMobile/comments/qv0m4i/call_of_duty_mobile_nov_15th_community_update/">CODM Subreddit</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
 
                 <h3>Season 9 (2021)</h3>
                 <div>
