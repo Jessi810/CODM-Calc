@@ -665,7 +665,7 @@ const gunStats = [
             head: 1.2,
             chest: 1.075,
             arms: {
-                upper: 1.05
+                upper: 1.075
             }
         },
         updated: {
