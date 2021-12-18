@@ -4,7 +4,7 @@ const gunStats = [
         name: 'Type 25',
         type: 'AR',
         damage: [24, 22, 19, 16],
-        range: [10, 17, 25],
+        range: [10, 17, 26],
         firerate: 857,
         bv: 563,
         hitbox: {
@@ -22,8 +22,8 @@ const gunStats = [
         id: 1011,
         name: 'Type 25 (SP)',
         type: 'AR',
-        damage: [28, 24, 21, 19, 16],
-        range: [10, 17, 21, 25],
+        damage: [28, 24, 19, 16],
+        range: [10, 17, 26],
         firerate: 857,
         bv: 563,
         hitbox: {
@@ -31,8 +31,8 @@ const gunStats = [
             chest: 1.1
         },
         updated: {
-            at: new Date('November 21, 2021'),
-            desc: 'Season 10 (2021)'
+            at: new Date('December 18, 2021'),
+            desc: 'Season 11 (2021)'
         }
     },
     {
@@ -651,6 +651,26 @@ const gunStats = [
         updated: {
             at: new Date('August 26, 2021'),
             desc: 'Season 7 (2021)'
+        }
+    },
+    {
+        id: 3080,
+        name: 'PKM',
+        type: 'LMG',
+        damage: [32, 31, 24],
+        range: [25, 33],
+        firerate: 630,
+        bv: undefined,
+        hitbox: {
+            head: 1.2,
+            chest: 1.05,
+            arms: {
+                upper: 1.05
+            }
+        },
+        updated: {
+            at: new Date('December 18, 2021'),
+            desc: 'Season 11 (2021)'
         }
     },
     {
