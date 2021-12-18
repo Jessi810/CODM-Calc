@@ -663,7 +663,7 @@ const gunStats = [
         bv: undefined,
         hitbox: {
             head: 1.2,
-            chest: 1.05,
+            chest: 1.075,
             arms: {
                 upper: 1.05
             }
