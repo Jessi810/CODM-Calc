@@ -71,11 +71,19 @@ const gunStats = [
         name: 'AK-47',
         type: 'AR',
         damage: [33, 26, 23, 21],
-        range: [20, 30, 55],
+        range: [20, 30, 54],
         firerate: 550,
         bv: 692,
         hitbox: {
-            head: 1.2
+            head: 1.2,
+            chest: 1.1,
+            arms: {
+                upper: 1.1
+            }
+        },
+        updated: {
+            at: new Date('February 23, 2022'),
+            desc: 'Season 1 (2022)'
         }
     },
     {
@@ -83,11 +91,19 @@ const gunStats = [
         name: 'AK-47 (5.45)',
         type: 'AR',
         damage: [25, 21, 16, 15],
-        range: [14, 24, 35],
+        range: [17, 25, 36],
         firerate: 674,
         bv: 692,
         hitbox: {
-            head: 1.2
+            head: 1.2,
+            chest: 1.1,
+            arms: {
+                upper: 1.1
+            }
+        },
+        updated: {
+            at: new Date('February 23, 2022'),
+            desc: 'Season 1 (2022)'
         }
     },
     {
@@ -485,7 +501,7 @@ const gunStats = [
             head: 1.5
         },
         updated: {
-            at: new Date('January 30, 2022'),
+            at: new Date('February 23, 2022'),
             desc: 'Season 1 (2022)'
         }
     },
@@ -1027,7 +1043,7 @@ const gunStats = [
     },
     {
         id: 4170,
-        name: 'PPSh 41',
+        name: 'PPSh-41',
         type: 'SMG',
         damage: [23, 21, 19, 17],
         range: [10, 16, 23],
@@ -1041,7 +1057,7 @@ const gunStats = [
             arms: 1.2
         },
         updated: {
-            at: new Date('January 30, 2022'),
+            at: new Date('February 23, 2022'),
             desc: 'Season 1 (2022)'
         }
     },

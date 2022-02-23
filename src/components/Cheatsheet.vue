@@ -170,7 +170,7 @@
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input type="checkbox" class="form-check-input" @click="showLatestGuns">
-                                                Show latest updated guns - Season 10 (2021)
+                                                Show latest updated guns - {{ LATEST_DATE }}
                                             </label>
                                         </div>
                                     </div>
@@ -349,9 +349,11 @@ export default {
         const missed = ref(0)
         const latestGuns = ref([])
 
+        const LATEST_DATE = ref('Season 1 (2022)')
+
         for (let lg of gunStats)
         {
-            if (lg.hasOwnProperty('updated') && lg.updated.desc === 'Season 10 (2021)')
+            if (lg.hasOwnProperty('updated') && lg.updated.desc === LATEST_DATE.value)
                 latestGuns.value.push(lg)
         }
 
@@ -646,6 +648,7 @@ export default {
             addHeadshotMultiplier,
             missed,
             latestGuns,
+            LATEST_DATE,
             hpChanged,
             vestChanged,
             hitboxChanged,
