@@ -14,6 +14,15 @@
                     </ul>
                 </div>
             
+                <h3>Season 1 (2022)</h3>
+                <div>
+                    <sup>January 30, 2022</sup>
+                    <ul>
+                        <li><strong>New</strong> Kilo 141 stats</li>
+                        <li><strong>New</strong> PPSh 41 stats</li>
+                    </ul>
+                </div>
+            
                 <h3>Season 10 (2021)</h3>
                 <div>
                     <sup>November 21, 2021</sup>
