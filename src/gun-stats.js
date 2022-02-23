@@ -71,11 +71,19 @@ const gunStats = [
         name: 'AK-47',
         type: 'AR',
         damage: [33, 26, 23, 21],
-        range: [20, 30, 55],
+        range: [20, 30, 54],
         firerate: 550,
         bv: 692,
         hitbox: {
-            head: 1.2
+            head: 1.2,
+            chest: 1.1,
+            arms: {
+                upper: 1.1
+            }
+        },
+        updated: {
+            at: new Date('February 23, 2022'),
+            desc: 'Season 1 (2022)'
         }
     },
     {
@@ -83,11 +91,19 @@ const gunStats = [
         name: 'AK-47 (5.45)',
         type: 'AR',
         damage: [25, 21, 16, 15],
-        range: [14, 24, 35],
+        range: [17, 25, 36],
         firerate: 674,
         bv: 692,
         hitbox: {
-            head: 1.2
+            head: 1.2,
+            chest: 1.1,
+            arms: {
+                upper: 1.1
+            }
+        },
+        updated: {
+            at: new Date('February 23, 2022'),
+            desc: 'Season 1 (2022)'
         }
     },
     {
@@ -471,6 +487,26 @@ const gunStats = [
         updated: {
             at: new Date('October 21, 2021'),
             desc: 'Season 9 (2021)'
+        }
+    },
+    {
+        id: 1210,
+        name: 'Kilo 141',
+        type: 'AR', 
+        damage: [29, 25, 23, 19],
+        range: [16, 26, 46],
+        firerate: 670,
+        bv: 692,
+        burst: {
+            rounds: 5,
+            delay: 250
+        },
+        hitbox: {
+            head: 1.5
+        },
+        updated: {
+            at: new Date('February 23, 2022'),
+            desc: 'Season 1 (2022)'
         }
     },
     // {
@@ -987,6 +1023,26 @@ const gunStats = [
         updated: {
             at: new Date('November 21, 2021'),
             desc: 'Season 10 (2021)'
+        }
+    },
+    {
+        id: 4170,
+        name: 'PPSh-41',
+        type: 'SMG',
+        damage: [23, 21, 19, 17],
+        range: [10, 16, 23],
+        firerate: 820,
+        bv: 529,
+        hitbox: {
+            head: 1.35,
+            chest: 1.2,
+            stomach: 1.1,
+            groin: 1.1,
+            arms: 1.2
+        },
+        updated: {
+            at: new Date('February 23, 2022'),
+            desc: 'Season 1 (2022)'
         }
     },
     {

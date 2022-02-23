@@ -2,6 +2,17 @@
     <div class="container">
         <div class="row justify-content-center my-3">
             <div class="col-12 col-lg-9">
+
+                <h3>Season 1 (2022)</h3>
+                <div>
+                    <sup>February 23, 2022</sup>
+                    <ul>
+                        <li><strong>New</strong> Kilo 141 stats</li>
+                        <li><strong>New</strong> PPSh-41 stats</li>
+                        <li>AK-47 stats updated</li>
+                        <li>AK-47 (5.45) stats updated</li>
+                    </ul>
+                </div>
             
                 <h3>Season 10 (2021)</h3>
                 <div>
